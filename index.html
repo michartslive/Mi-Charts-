@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ffl" style="background:#c9ccd2">
 <head>
 <meta charset="utf-8">
+<style>html.ffl,html.ffl body{background:#c9ccd2!important}</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#c9ccd2">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
@@ -1115,10 +1116,27 @@ async function tdGet(path){
   if(j.status==='error' || (j.code && j.code>=400)){ if(j.code===429) tdCool=Date.now()+30000; throw new Error(j.message||'Data error'); }
   return j;
 }
+const YF_SRC=[
+  (u)=>TD_PROXY+'yf/'+u,
+  (u)=>'https://query1.finance.yahoo.com/'+u,
+  (u)=>'https://query2.finance.yahoo.com/'+u,
+  (u)=>'https://corsproxy.io/?url='+encodeURIComponent('https://query1.finance.yahoo.com/'+u),
+  (u)=>'https://api.allorigins.win/raw?url='+encodeURIComponent('https://query1.finance.yahoo.com/'+u),
+  (u)=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent('https://query1.finance.yahoo.com/'+u)
+];
+let yfBest=0;
 async function yfGet(s,iv,rng){
-  const r=await fetchT(TD_PROXY+'yf/v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false');
-  const j=await r.json(); const res=j&&j.chart&&j.chart.result&&j.chart.result[0];
-  if(!res) throw new Error((j&&j.chart&&j.chart.error&&j.chart.error.description)||'Data error'); return res;
+  const u='v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false';
+  const order=[yfBest].concat(YF_SRC.map((_,i)=>i).filter(i=>i!==yfBest)); let lastErr='Data error';
+  for(const i of order){
+    try{
+      const r=await fetchT(YF_SRC[i](u),null,7000); if(!r.ok) throw new Error('HTTP '+r.status);
+      const j=await r.json(); const res=j&&j.chart&&j.chart.result&&j.chart.result[0];
+      if(!res||!res.meta) throw new Error((j&&j.chart&&j.chart.error&&j.chart.error.description)||'No data');
+      yfBest=i; return res;
+    }catch(e){ lastErr=e.message||String(e); }
+  }
+  throw new Error(lastErr);
 }
 const YFI={'1m':['1m',6],'5m':['5m',55],'15m':['15m',55],'30m':['30m',55],'1h':['60m',700],'4h':['60m',700],'1D':['1d',3650],'1W':['1wk',7300],'1M':['1mo',14600]};
 async function yfCandles(sym,tf,endT){
@@ -4349,7 +4367,7 @@ window.MiGuy={ask:submit,activate,deactivate,run:runAction,repair};
 
 <script>
 (function(){var sp=document.getElementById('ffSplash');if(!sp)return;var t0=Date.now(),done=false;
-function hide(){if(done)return;done=true;var w=Math.max(0,1400-(Date.now()-t0));setTimeout(function(){sp.classList.add('out');setTimeout(function(){sp.remove();},600);},w);}
+function hide(){if(done)return;done=true;var w=Math.max(0,1400-(Date.now()-t0));setTimeout(function(){sp.classList.add('out');setTimeout(function(){sp.remove();document.documentElement.classList.remove('ffl');document.documentElement.style.background='';},600);},w);}
 if(document.readyState==='complete')setTimeout(hide,300);else window.addEventListener('load',function(){setTimeout(hide,300);});
 setTimeout(hide,6000);})();
 </script>
