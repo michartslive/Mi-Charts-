@@ -1,6 +1,6 @@
 {
-  "name": "MI-CHARTS",
-  "short_name": "MI-CHARTS",
+  "name": "Mi-Charts",
+  "short_name": "Mi-Charts",
   "description": "Mobile trading charts with replay",
   "start_url": "./",
   "scope": "./",
