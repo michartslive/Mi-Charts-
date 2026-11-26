@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="ffl" style="background:#c9ccd2">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<style>html.ffl,html.ffl body{background:#c9ccd2!important}</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#c9ccd2">
+<meta name="theme-color" content="#a9b0bb">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icon-192.png">
@@ -14,6 +13,16 @@
 <meta name="apple-mobile-web-app-title" content="Mi-Charts">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Mi-Charts</title>
+<style>
+html{background:#a9b0bb}
+#miSplash{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(135deg,#8d94a0,#bcc2cc);transition:opacity .35s ease}
+#miSplash.off{opacity:0;pointer-events:none}
+#miSplash img{width:92px;height:92px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#miSplash b{font:600 17px/1 system-ui,sans-serif;letter-spacing:.5px;color:#2a2e36}
+#miSplash i{width:34px;height:3px;border-radius:2px;background:rgba(42,46,54,.25);overflow:hidden;position:relative}
+#miSplash i:after{content:"";position:absolute;left:-40%;width:40%;height:100%;background:#2a2e36;animation:mispl 1s linear infinite}
+@keyframes mispl{to{left:100%}}
+</style>
 <style>
 :root{--bg:#0f1115;--text:#e8eaed;--surface:#181b21;--border:#2a2e37;--muted:#8b919c;--accent:#2962ff;--accent-t:#fff;--up:#26a69a;--down:#ef5350}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -726,28 +735,8 @@ html,body{width:100%;min-width:100%;margin:0}
 #setGrid>.edgeSubs{margin:-4px 2px 0}
 @media (orientation:landscape){#setGrid>.topRow{flex:1 1 100%}}
 </style>
-<style id="ff-splash">
-#ffSplash{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
-background:radial-gradient(120% 90% at 50% 30%,#f4f5f7 0%,#d6d9de 45%,#a9aeb6 100%);
-padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);transition:opacity .45s ease,visibility .45s}
-#ffSplash.out{opacity:0;visibility:hidden;pointer-events:none}
-#ffSplash .ico{position:relative;width:38vmin;height:38vmin;max-width:240px;max-height:240px;display:flex;align-items:center;justify-content:center}
-#ffSplash .ico img{position:relative;z-index:2;width:100%;height:100%;object-fit:contain;border-radius:22%;
-filter:grayscale(1) brightness(1.18) contrast(1.05) drop-shadow(0 6px 18px rgba(80,86,96,.45));animation:ffSpread 1.8s ease-in-out infinite}
-#ffSplash .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.9);box-shadow:0 0 22px rgba(255,255,255,.7),inset 0 0 18px rgba(150,156,166,.5);opacity:0;animation:ffRing 2.4s ease-out infinite}
-#ffSplash .ring:nth-child(2){animation-delay:.8s}
-#ffSplash .ring:nth-child(3){animation-delay:1.6s}
-#ffSplash .nm{font-family:'Orbitron',system-ui,-apple-system,sans-serif;font-weight:800;font-size:clamp(20px,6.2vw,30px);letter-spacing:.18em;text-transform:uppercase;
-background:linear-gradient(100deg,#6c727c 0%,#f8f9fb 35%,#8a909a 55%,#e9ebee 80%,#6c727c 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
-filter:drop-shadow(0 1px 0 rgba(255,255,255,.6));animation:ffShine 2.2s linear infinite}
-@keyframes ffSpread{0%,100%{transform:scale(.88)}50%{transform:scale(1.06)}}
-@keyframes ffRing{0%{transform:scale(.7);opacity:.9}100%{transform:scale(2.6);opacity:0}}
-@keyframes ffShine{0%{background-position:120% 0}100%{background-position:-120% 0}}
-@media (prefers-reduced-motion:reduce){#ffSplash .ico img,#ffSplash .ring,#ffSplash .nm{animation:none}}
-</style>
 </head>
-<body><div id="ffSplash" aria-hidden="true"><div class="ico"><span class="ring"></span><span class="ring"></span><span class="ring"></span><img src="icon-192.png" alt=""></div><div class="nm">Factual Finesse</div></div>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="elec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7ff"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#4f7bff"/></linearGradient><linearGradient id="elecL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg>
+<body><div id="miSplash"><img src="icon-192.png" alt=""><b>Mi-Charts</b><i></i></div><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="elec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7ff"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#4f7bff"/></linearGradient><linearGradient id="elecL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg>
 <div id="app">
   <!-- TAB 1: MI-MARKETS -->
   <section class="tab on" id="tab-markets">
@@ -929,7 +918,7 @@ const IC = {
 const CORE = ['NAS100','EURUSD','GBPUSD','USDJPY','BTCUSD'];
 const REMOVED = ['XAUUSD','XAGUSD','AUDUSD','USDCAD','USDCHF','EURGBP'];
 const INSTR = {
-  NAS100:{n:'Nasdaq 100',yf:'NQ=F',td:'QQQ',mul:41.08,cls:'idx',dec:1,base:27900},
+  NAS100:{n:'Nasdaq 100',td:'QQQ',mul:41.08,cls:'idx',dec:1,base:27900},
   EURUSD:{n:'Euro vs US Dollar',td:'EUR/USD',cls:'fx',dec:5,base:1.08},
   GBPUSD:{n:'British Pound vs US Dollar',td:'GBP/USD',cls:'fx',dec:5,base:1.27},
   USDJPY:{n:'US Dollar vs Yen',td:'USD/JPY',cls:'fx',dec:3,base:150},
@@ -1101,8 +1090,8 @@ const TFSECS = [];
 const TFSEC = {'5s':5,'15s':15,'30s':30,'45s':45,'1m':60,'5m':300,'15m':900,'30m':1800,'1h':3600,'4h':14400,'1D':86400,'1W':604800,'1M':2592000};
 const TDI = {'1m':'1min','5m':'5min','15m':'15min','30m':'30min','1h':'1h','4h':'4h','1D':'1day','1W':'1week','1M':'1month'};
 const BNI = {'1m':'1m','5m':'5m','15m':'15m','30m':'30m','1h':'1h','4h':'4h','1D':'1d','1W':'1w','1M':'1M'};
-const bnState = {fail:0}, yfState = {fail:0};
-const prov = sym => (ins(sym).bn && bnState.fail<3) ? 'bn' : ((ins(sym).yf&&TD_PROXY&&(yfState.fail<3||!ins(sym).td)) ? 'yf' : ((TWELVE_KEY||TD_PROXY) ? 'td' : 'demo'));
+const bnState = {fail:0};
+const prov = sym => (ins(sym).bn && bnState.fail<3) ? 'bn' : ((ins(sym).yf&&TD_PROXY) ? 'yf' : ((TWELVE_KEY||TD_PROXY) ? 'td' : 'demo'));
 const calls = []; let tdCool = 0;
 const budgetLeft = () => { const n=Date.now(); while(calls.length && n-calls[0]>60000) calls.shift(); return TD_BUDGET - calls.length; };
 const TD_DAY=780;
@@ -1116,27 +1105,10 @@ async function tdGet(path){
   if(j.status==='error' || (j.code && j.code>=400)){ if(j.code===429) tdCool=Date.now()+30000; throw new Error(j.message||'Data error'); }
   return j;
 }
-const YF_SRC=[
-  (u)=>TD_PROXY+'yf/'+u,
-  (u)=>'https://query1.finance.yahoo.com/'+u,
-  (u)=>'https://query2.finance.yahoo.com/'+u,
-  (u)=>'https://corsproxy.io/?url='+encodeURIComponent('https://query1.finance.yahoo.com/'+u),
-  (u)=>'https://api.allorigins.win/raw?url='+encodeURIComponent('https://query1.finance.yahoo.com/'+u),
-  (u)=>'https://api.codetabs.com/v1/proxy?quest='+encodeURIComponent('https://query1.finance.yahoo.com/'+u)
-];
-let yfBest=0;
 async function yfGet(s,iv,rng){
-  const u='v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false';
-  const order=[yfBest].concat(YF_SRC.map((_,i)=>i).filter(i=>i!==yfBest)); let lastErr='Data error';
-  for(const i of order){
-    try{
-      const r=await fetchT(YF_SRC[i](u),null,7000); if(!r.ok) throw new Error('HTTP '+r.status);
-      const j=await r.json(); const res=j&&j.chart&&j.chart.result&&j.chart.result[0];
-      if(!res||!res.meta) throw new Error((j&&j.chart&&j.chart.error&&j.chart.error.description)||'No data');
-      yfBest=i; return res;
-    }catch(e){ lastErr=e.message||String(e); }
-  }
-  throw new Error(lastErr);
+  const r=await fetchT(TD_PROXY+'yf/v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false');
+  const j=await r.json(); const res=j&&j.chart&&j.chart.result&&j.chart.result[0];
+  if(!res) throw new Error((j&&j.chart&&j.chart.error&&j.chart.error.description)||'Data error'); return res;
 }
 const YFI={'1m':['1m',6],'5m':['5m',55],'15m':['15m',55],'30m':['30m',55],'1h':['60m',700],'4h':['60m',700],'1D':['1d',3650],'1W':['1wk',7300],'1M':['1mo',14600]};
 async function yfCandles(sym,tf,endT){
@@ -1154,10 +1126,10 @@ function onQuote(sym, price, pct, src){
 async function fetchQuote(sym){
   const q = Q[sym] || (Q[sym]={}); q.tryT=Date.now();
   try{
-    if(prov(sym)==='yf'){ const j=await yfGet(ins(sym).yf,'1m','range=1d'), m=j.meta; const pr=+m.regularMarketPrice, pv=+(m.chartPreviousClose||m.previousClose); if(!(pr>0)) throw new Error('Yahoo no price'); yfState.fail=0; onQuote(sym,pr,pv?(pr/pv-1)*100:0,'Yahoo'); return; }
+    if(prov(sym)==='yf'){ const j=await yfGet(ins(sym).yf,'1m','range=1d'), m=j.meta; const pr=+m.regularMarketPrice, pv=+(m.chartPreviousClose||m.previousClose); onQuote(sym,pr,pv?(pr/pv-1)*100:0,'Yahoo'); return; }
     const j = await tdGet('quote?symbol='+encodeURIComponent(ins(sym).td)+'&timezone=UTC');
     onQuote(sym, +j.close*(ins(sym).mul||1), +j.percent_change, 'Twelve Data');
-  }catch(e){ if(prov(sym)==='yf'&&ins(sym).td){ yfState.fail++; return fetchQuote(sym); } q.err=e.message; scheduleMarkets(); }
+  }catch(e){ q.err=e.message; scheduleMarkets(); }
 }
 /* demo data (only when no key / feed unavailable) */
 function mulberry(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return((t^t>>>14)>>>0)/4294967296; }; }
@@ -1218,7 +1190,7 @@ async function fetchCandles(sym, tf, endT){
       return {c:j.map(k=>({t:Math.floor(k[0]/1000),o:+k[1],h:+k[2],l:+k[3],c:+k[4],v:+k[5]})), src:'Binance'};
     }catch(e){ bnState.fail=3; return fetchCandles(sym, tf, endT); }
   }
-  if(p==='yf'){ try{ const r=await yfCandles(sym,tf,endT); yfState.fail=0; return r; }catch(e){ if(!ins(sym).td) throw e; yfState.fail++; return fetchCandles(sym,tf,endT); } }
+  if(p==='yf') return yfCandles(sym,tf,endT);
   if(p==='td'){
     const j = await tdGet('time_series?symbol='+encodeURIComponent(ins(sym).td)+'&interval='+TDI[tf]+'&outputsize=1000&timezone=UTC'+(endT?'&end_date='+encodeURIComponent(new Date(endT*1000).toISOString().slice(0,19).replace('T',' ')):''));
     const mu=ins(sym).mul||1; const c=(j.values||[]).map(x=>({t:parseT(x.datetime),o:+x.open*mu,h:+x.high*mu,l:+x.low*mu,c:+x.close*mu,v:+(x.volume||0)})).reverse();
@@ -3843,6 +3815,13 @@ window.__mi = {S,Q,get candles(){return candles;},setTool,showTab,get DR(){retur
   document.addEventListener('focusout',()=>setTimeout(upd,200));
 })();
 </script>
+<script id="mi-splash-off">
+(function(){ var s=document.getElementById('miSplash'),gone=false;
+  function off(){ if(gone||!s) return; gone=true; s.classList.add('off'); setTimeout(function(){ if(s.parentNode) s.parentNode.removeChild(s); },450); }
+  window.miSplashOff=off;
+  window.addEventListener('load',function(){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ setTimeout(off,250); }); }); });
+  setTimeout(off,5000); })();
+</script>
 <script id="mi-boot">
 /* MI-GUY self-repair bootstrap: starts the app, applying any saved fixes (find/replace edits) to its code first.
    Add ?safe=1 to the web address to start without any fixes. */
@@ -3964,9 +3943,9 @@ window.__mi = {S,Q,get candles(){return candles;},setTool,showTab,get DR(){retur
    ===================================================================== */
 (function(){
 const K='mi_ai';
-const DEFA={on:true,convo:true,greet:true,chatty:false,chatLvl:'normal',method:'ask',vlang:'auto',provider:'claude',keys:{gemini:'',claude:''},models:{gemini:'gemini-2.5-flash',claude:'claude-sonnet-5-5'},pos:null};
+const DEFA={on:true,convo:true,greet:true,chatty:false,chatLvl:'normal',method:'ask',vlang:'auto',provider:'gemini',keys:{gemini:'',claude:''},models:{gemini:'gemini-3.5-flash-lite',claude:'claude-sonnet-5-5'},pos:null};
 let A=Object.assign({},DEFA);
-try{ const o=JSON.parse(localStorage.getItem(K)||'null'); if(o) A=Object.assign({},DEFA,o,{keys:Object.assign({},DEFA.keys,o.keys||{}),models:Object.assign({},DEFA.models,o.models||{})}); }catch(e){}
+try{ const o=JSON.parse(localStorage.getItem(K)||'null'); if(o) A=Object.assign({},DEFA,o,{keys:Object.assign({},DEFA.keys,o.keys||{}),models:Object.assign({},DEFA.models,o.models||{})}); if(/^gemini-2\.5-(flash|pro)$/i.test(A.models.gemini||'')) A.models.gemini=DEFA.models.gemini; }catch(e){}
 const saveA=()=>{ try{ localStorage.setItem(K,JSON.stringify(A)); }catch(e){} };
 const zh=()=>S.lang==='zh';
 const L=(en,cn)=>zh()?cn:en;
@@ -4128,7 +4107,7 @@ async function callLLM(system,user,hist,maxTok){
     }
     const contents=(hist||[]).map(h=>({role:h.role==='assistant'?'model':'user',parts:[{text:h.text}]})).concat([{role:'user',parts:[{text:user}]}]);
     /* Gemini 2.5 Flash "thinks" first and the thinking eats the output budget -> empty replies. Turn thinking off for the flash models. */
-    const gc={temperature:.35,maxOutputTokens:Math.max(maxTok||2000,300),responseMimeType:'application/json'};
+    const gc={temperature:.35,maxOutputTokens:Math.max(maxTok||2000,/gemini-3/i.test(model)?1500:300),responseMimeType:'application/json'};
     if(/gemini-2\.5-flash/i.test(model)) gc.thinkingConfig={thinkingBudget:0};
     const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent',{method:'POST',signal:ac.signal,headers:{'content-type':'application/json','x-goog-api-key':key},body:JSON.stringify({systemInstruction:{parts:[{text:system}]},contents,generationConfig:gc})});
     let j={}; try{ j=await r.json(); }catch(_){}
@@ -4152,7 +4131,7 @@ async function submit(text){
     miHist.push({role:'user',text:text}); miHist.push({role:'assistant',text:String(res.reply||'')}); pendingRes=res;
     if(A.method==='audio'||A.method==='text') deliver(A.method); else askForm(res);
   }catch(e){ setState('active'); showDock(true);
-    if(e.message==='NOKEY') showCard(head()+'<div class="mc-t">'+L('I need your Claude API key first. Open SETUP → Mi-Guy AI, paste the key, and tap Test.','我需要先设置 Claude API 密钥。请打开 设置 → Mi-Guy AI，粘贴密钥并点“测试”。')+'</div><div class="mc-row"><button class="pri" data-c="aimenu">'+L('Open AI menu','打开 AI 菜单')+'</button></div>');
+    if(e.message==='NOKEY') showCard(head()+'<div class="mc-t">'+L('I need your AI key first. Open SETUP → Mi-Guy AI, paste the key (free Gemini key from aistudio.google.com), and tap Save & test.','我需要先设置 AI 密钥。请打开 设置 → Mi-Guy AI，粘贴密钥（可在 aistudio.google.com 免费获取 Gemini 密钥）并点“保存并测试”。')+'</div><div class="mc-row"><button class="pri" data-c="aimenu">'+L('Open AI menu','打开 AI 菜单')+'</button></div>');
     else showCard(head()+'<div class="mc-t">'+L('Sorry, I couldn\'t reach the AI.','抱歉，无法连接 AI。')+'</div><div class="mc-n">'+esc(String(e.message||e).slice(0,220))+'</div>'); }
 }
 function askForm(res){
@@ -4365,11 +4344,5 @@ window.MiGuy={ask:submit,activate,deactivate,run:runAction,repair};
 })();
 </script>
 
-<script>
-(function(){var sp=document.getElementById('ffSplash');if(!sp)return;var t0=Date.now(),done=false;
-function hide(){if(done)return;done=true;var w=Math.max(0,1400-(Date.now()-t0));setTimeout(function(){sp.classList.add('out');setTimeout(function(){sp.remove();document.documentElement.classList.remove('ffl');document.documentElement.style.background='';},600);},w);}
-if(document.readyState==='complete')setTimeout(hide,300);else window.addEventListener('load',function(){setTimeout(hide,300);});
-setTimeout(hide,6000);})();
-</script>
 </body>
 </html>
