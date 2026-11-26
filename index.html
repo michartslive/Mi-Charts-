@@ -597,7 +597,7 @@ body.bold #hdr .nm,body.bold #symBtn,body.bold #tfs .tbtn,body.bold .li .ck,body
 #tfs,#symBtn{touch-action:none}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&family=Bebas+Neue&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;700&family=Bebas+Neue&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
 #edgeBar{display:none;position:absolute;z-index:30;left:12px;bottom:76px;width:min(calc(100% - 24px),440px);box-sizing:border-box;padding:11px 16px 12px;border-radius:14px;background:var(--eb-bg,#44494f);color:var(--eb-fg,#fff);font-family:var(--eb-font,'Orbitron',sans-serif);border:1px solid rgba(255,255,255,.14);box-shadow:0 10px 28px rgba(0,0,0,.35);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;text-align:left;font-size:13px;line-height:1.45}
 #edgeBar.on{display:block}
@@ -679,13 +679,15 @@ body.bold #hdr .nm,body.bold #symBtn,body.bold #tfs .tbtn,body.bold .li .ck,body
 </style>
 <style>
 /* Setup tab: spread the menus out, filling the tab */
-#setGrid{display:flex!important;flex-direction:column!important;gap:14px!important;padding:14px 14px 22px!important;overflow-y:auto;min-height:0}
-#setGrid>.srow,#setGrid>.edgeBig{flex:1 1 0;min-height:72px;margin:0!important;border:1px solid var(--border)!important;border-radius:16px!important;background:var(--surface);box-sizing:border-box}
-#setGrid>.srow{padding:0 20px;font-size:16px}
+#setGrid{display:flex!important;flex-direction:column!important;gap:9px!important;padding:10px 12px 18px!important;overflow-y:auto;min-height:0}
+#setGrid>.srow,#setGrid>.edgeBig{flex:0 0 auto;min-height:50px;margin:0!important;border:1px solid var(--border)!important;border-radius:14px!important;background:var(--surface);box-sizing:border-box}
+#setGrid>.srow{padding:0 16px;font-size:14.5px}
 #setGrid>.edgeBig .eh{padding:0 20px;align-self:stretch}
 #setGrid>.edgeSubs{margin:-6px 4px 0}
 #setGrid>.apdd{margin:-6px 4px 0;padding:6px 8px 6px 12px;border-radius:12px}
-#setGrid>.apdd .srow{min-height:52px}
+#setGrid>.apdd .srow{min-height:42px;font-size:14px}
+body.nolbl nav button>span:not(.ic){display:none}
+body.nolbl nav button{padding:11px 0 9px}
 </style>
 <style id="mi-v2">
 /* ===== landscape: use the entire screen edge to edge ===== */
@@ -704,7 +706,7 @@ html,body{width:100%;min-width:100%;margin:0}
   .tbar{max-height:50px;overflow:hidden}
   .sp{max-height:96%}
   #setGrid{flex-direction:row!important;flex-wrap:wrap;align-content:stretch}
-  #setGrid>.srow,#setGrid>.edgeBig{flex:1 1 44%;min-height:56px}
+  #setGrid>.srow,#setGrid>.edgeBig{flex:1 1 44%;min-height:44px}
   #setGrid>.edgeSubs,#setGrid>.apdd{flex:1 1 100%}
 }
 /* ===== MI-EDGE: right-hand tap zone (no arrow) + full-screen reader ===== */
@@ -724,19 +726,93 @@ html,body{width:100%;min-width:100%;margin:0}
 #edgeFull .eftx{font-size:clamp(12.5px,min(3.1vmin,2.6vh),30px);line-height:1.35;font-weight:600;letter-spacing:.4px;flex:1}
 
 /* ===== Setup top row: Mi-Guy (left) + Mi-Edge (right) ===== */
-#setGrid>.topRow{display:flex;gap:12px;flex:1 1 0;min-height:118px;margin:0!important}
-#setGrid>.topRow .tcard{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:7px;padding:16px 16px;border-radius:20px;border:1px solid #5b626b;background:linear-gradient(150deg,#4a5058,#262a30);color:#fff;text-align:left;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 6px 18px rgba(0,0,0,.28);position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+#setGrid>.topRow{display:flex;gap:9px;flex:0 0 auto;min-height:84px;margin:0!important}
+#setGrid>.topRow .tcard{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:5px;padding:11px 13px;border-radius:16px;border:1px solid #5b626b;background:linear-gradient(150deg,#4a5058,#262a30);color:#fff;text-align:left;box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 6px 18px rgba(0,0,0,.28);position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
 #setGrid>.topRow .tcard:active{transform:scale(.985);filter:brightness(1.12)}
-#setGrid>.topRow .tic{width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
-#setGrid>.topRow .tic svg{width:22px;height:22px;fill:none;stroke:#cfd5de;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-#setGrid>.topRow .tt{font-family:'Orbitron',sans-serif;font-weight:900;font-size:17px;letter-spacing:2.5px;line-height:1}
-#setGrid>.topRow .ts{font-size:10.5px;letter-spacing:1.2px;font-weight:700;color:rgba(255,255,255,.55);line-height:1.3}
+#setGrid>.topRow .tic{width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+#setGrid>.topRow .tic svg{width:18px;height:18px;fill:none;stroke:#cfd5de;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#setGrid>.topRow .tt{font-family:'Orbitron',sans-serif;font-weight:900;font-size:14px;letter-spacing:2px;line-height:1}
+#setGrid>.topRow .ts{font-size:9.5px;letter-spacing:1.2px;font-weight:700;color:rgba(255,255,255,.55);line-height:1.3}
 #setGrid>.topRow .ts b{color:#7fe3b4;font-weight:800}#setGrid>.topRow .ts b.off{color:#ff8a8a}
 #setGrid>.edgeSubs{margin:-4px 2px 0}
 @media (orientation:landscape){#setGrid>.topRow{flex:1 1 100%}}
 </style>
 </head>
-<body><div id="miSplash"><img src="icon-192.png" alt=""><b>Mi-Charts</b><i></i></div><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="elec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7ff"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#4f7bff"/></linearGradient><linearGradient id="elecL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg>
+<body><div id="miSplash"><img src="icon-192.png" alt=""><b>Mi-Charts</b><i></i></div>
+<script id="mi-auth">
+(function(){
+var SB='https://uxddzojwgzibdudcwami.supabase.co',KEY='sb_publishable_9oIK-vmNHNyd3oUCkMnvsg_NeWTiVGb',SK='mi_sb_session';
+function ld(){try{return JSON.parse(localStorage.getItem(SK)||'null');}catch(e){return null;}}
+function sv(s){try{ if(s) localStorage.setItem(SK,JSON.stringify(s)); else localStorage.removeItem(SK); }catch(e){}}
+function now(){return Math.floor(Date.now()/1000);}
+async function call(path,o){ o=o||{}; var h={'apikey':KEY,'Content-Type':'application/json'}; if(o.token) h.Authorization='Bearer '+o.token; var r;
+  try{ r=await fetch(SB+path,{method:o.method||'POST',headers:h,body:o.body?JSON.stringify(o.body):undefined}); }catch(e){ var n=new Error('net'); n.net=true; throw n; }
+  var j=null; try{ j=await r.json(); }catch(e){}
+  if(!r.ok){ var er=new Error('err'); er.status=r.status; er.code=j&&(j.error_code||j.code); er.msg=(j&&(j.msg||j.message||j.error_description))||''; throw er; }
+  return j||{}; }
+function mk(t,old){ var u=t.user||{}; return {at:t.access_token,rt:t.refresh_token,exp:t.expires_at||(now()+(t.expires_in||3600)),email:u.email||(old&&old.email)||'',id:u.id||(old&&old.id)||''}; }
+function friendly(e){ if(e.net) return 'No connection. Check your internet and try again.';
+  var m={invalid_credentials:'Wrong email or password.',email_not_confirmed:'Please confirm your email first. Check your inbox and spam folder.',user_already_exists:'That email already has an account. Sign in instead.',email_exists:'That email already has an account. Sign in instead.',weak_password:'Password is too weak. Use at least 8 characters.',over_email_send_rate_limit:'Too many emails sent. Wait a few minutes and try again.',over_request_rate_limit:'Too many tries. Wait a minute and try again.',validation_failed:'Enter a valid email and password.',signup_disabled:'Sign-ups are turned off.',same_password:'Choose a different password from your old one.'};
+  return m[e.code]||e.msg||'Something went wrong. Try again.'; }
+async function refresh(s){ var j=await call('/auth/v1/token?grant_type=refresh_token',{body:{refresh_token:s.rt}}); var n=mk(j,s); sv(n); return n; }
+var g=document.createElement('div'); g.id='miGate';
+var css=document.createElement('style'); css.textContent='#miGate{position:fixed;inset:0;z-index:2147483640;display:none;overflow:auto;padding:20px;background:linear-gradient(135deg,#8d94a0,#bcc2cc);font-family:system-ui,-apple-system,sans-serif;-webkit-text-size-adjust:100%}#miGate .gc{width:100%;max-width:360px;margin:auto;background:rgba(246,247,249,.94);border-radius:22px;padding:24px 20px 20px;box-shadow:0 14px 40px rgba(0,0,0,.28);color:#1d2128}#miGate .gh{display:flex;align-items:center;gap:12px;margin-bottom:16px}#miGate .gh img{width:46px;height:46px;border-radius:12px}#miGate .gh b{font-size:20px;display:block}#miGate .gh span{font-size:13px;color:#5b6370}#miGate .gt{display:flex;background:#dfe2e7;border-radius:12px;padding:3px;margin-bottom:6px}#miGate .gt button{flex:1;height:36px;border:0;background:none;border-radius:10px;font-size:15px;font-weight:600;color:#5b6370}#miGate .gt button.on{background:#fff;color:#1d2128;box-shadow:0 1px 3px rgba(0,0,0,.15)}#miGate input{display:block;width:100%;height:48px;border-radius:12px;border:1px solid #b6bcc6;background:#fff;padding:0 14px;font-size:16px;margin-top:10px;box-sizing:border-box;color:#1d2128}#miGate .gp{width:100%;height:50px;border:0;border-radius:12px;background:#262a31;color:#fff;font-size:16px;font-weight:600;margin-top:16px}#miGate .gp[disabled]{opacity:.6}#miGate .gl{display:block;margin:14px auto 0;background:none;border:0;color:#3a4150;font-size:14px;text-decoration:underline}#miGate .gm{min-height:20px;margin-top:12px;font-size:14px;line-height:1.4;color:#b3261e}#miGate .gm.ok{color:#17653b}';
+document.head.appendChild(css);
+var mode='in',busy=false,recTok=null;
+function show(){ g.style.display='flex'; } function hide(){ g.style.display='none'; }
+function render(msg,ok){
+  var t=mode==='reset'?'Set a new password':mode==='forgot'?'Reset your password':'';
+  g.innerHTML='<div class="gc"><div class="gh"><img src="icon-192.png" alt=""><div><b>Mi-Charts</b><span>'+(mode==='reset'?'Choose a new password':'Sign in to continue')+'</span></div></div>'
+   +((mode==='in'||mode==='up')?'<div class="gt"><button data-m="in" class="'+(mode==='in'?'on':'')+'">Sign in</button><button data-m="up" class="'+(mode==='up'?'on':'')+'">Create account</button></div>':'<div style="font-weight:600;margin:4px 0 2px">'+t+'</div>')
+   +'<form id="gf" novalidate>'
+   +(mode==='reset'?'':'<input id="ge" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="Email">')
+   +(mode==='forgot'?'':'<input id="gpw" type="password" autocomplete="'+(mode==='in'?'current-password':'new-password')+'" placeholder="'+(mode==='reset'?'New password':'Password')+'">')
+   +((mode==='up'||mode==='reset')?'<input id="gp2" type="password" autocomplete="new-password" placeholder="Repeat password">':'')
+   +'<button class="gp" type="submit">'+({in:'Sign in',up:'Create account',forgot:'Send reset link',reset:'Save password'})[mode]+'</button></form>'
+   +'<div class="gm'+(ok?' ok':'')+'" id="gmsg">'+(msg||'')+'</div>'
+   +(mode==='in'?'<button class="gl" data-m="forgot">Forgot password?</button>':'')
+   +(mode==='forgot'?'<button class="gl" data-m="in">Back to sign in</button>':'')+'</div>';
+  var f=g.querySelector('#gf'); f.onsubmit=function(ev){ ev.preventDefault(); submit(); };
+  g.querySelectorAll('[data-m]').forEach(function(b){ b.onclick=function(){ mode=b.dataset.m; render(); }; });
+}
+async function submit(){ if(busy) return; var E=g.querySelector('#ge'),P=g.querySelector('#gpw'),P2=g.querySelector('#gp2'),btn=g.querySelector('.gp');
+  var em=E?E.value.trim().toLowerCase():'',pw=P?P.value:'';
+  function msg(m,ok){ var x=g.querySelector('#gmsg'); x.textContent=m; x.className='gm'+(ok?' ok':''); }
+  if(mode!=='reset'&&!/^\S+@\S+\.\S+$/.test(em)) return msg('Enter a valid email address.');
+  if(mode!=='forgot'&&pw.length<8) return msg('Password must be at least 8 characters.');
+  if((mode==='up'||mode==='reset')&&P2&&P2.value!==pw) return msg('The two passwords do not match.');
+  busy=true; btn.disabled=true; msg('');
+  try{
+    if(mode==='in'){ var j=await call('/auth/v1/token?grant_type=password',{body:{email:em,password:pw}}); sv(mk(j)); done(); }
+    else if(mode==='up'){ var j2=await call('/auth/v1/signup',{body:{email:em,password:pw}});
+      if(j2.access_token){ sv(mk(j2)); done(); }
+      else if(j2.user&&j2.user.identities&&!j2.user.identities.length){ msg('That email already has an account. Sign in instead.'); }
+      else { mode='in'; render('Account created. Check your email and tap the confirmation link, then sign in.',true); } }
+    else if(mode==='forgot'){ await call('/auth/v1/recover',{body:{email:em}}); render('If that email has an account, a reset link is on its way.',true); mode='forgot'; }
+    else if(mode==='reset'){ await call('/auth/v1/user',{method:'PUT',token:recTok,body:{password:pw}}); mode='in'; done(); }
+  }catch(e){ msg(friendly(e)); }
+  busy=false; var b2=g.querySelector('.gp'); if(b2) b2.disabled=false; }
+function done(){ hide(); g.innerHTML=''; try{ window.dispatchEvent(new Event('mi-auth')); }catch(e){} }
+document.body.appendChild(g);
+// links from emails (confirm / reset)
+var H=location.hash.replace(/^#/,'');
+if(H.indexOf('access_token=')>-1||H.indexOf('error_description=')>-1){
+  var Q=new URLSearchParams(H); try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
+  if(Q.get('error_description')){ mode='in'; render(Q.get('error_description').replace(/\+/g,' ')+' Request a new link.'); show(); }
+  else { var at=Q.get('access_token'),type=Q.get('type'); show(); render('Signing you in...',true);
+    call('/auth/v1/user',{method:'GET',token:at}).then(function(u){
+      sv({at:at,rt:Q.get('refresh_token')||'',exp:+Q.get('expires_at')||(now()+(+Q.get('expires_in')||3600)),email:u.email||'',id:u.id||''});
+      if(type==='recovery'){ recTok=at; mode='reset'; render(); } else done();
+    }).catch(function(e){ mode='in'; render(friendly(e)); }); }
+} else if(!ld()){ mode='in'; render(); show(); }
+// keep session fresh
+function tick(){ var s=ld(); if(!s) return; if(s.exp-300<now()){ refresh(s).catch(function(e){ if(!e.net&&(e.status===400||e.status===401||e.status===403)){ sv(null); mode='in'; render('Your session expired. Please sign in again.'); show(); } }); } }
+tick(); setInterval(tick,240000); document.addEventListener('visibilitychange',function(){ if(!document.hidden) tick(); });
+window.miAuth={email:function(){ return (ld()||{}).email||''; },
+  out:function(){ var s=ld(); sv(null); var go=function(){ location.reload(); }; if(!s) return go();
+    Promise.race([call('/auth/v1/logout',{token:s.at}).catch(function(){}),new Promise(function(r){setTimeout(r,1500);})]).then(go); }};
+})();
+</script><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="elec" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff7ff"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#4f7bff"/></linearGradient><linearGradient id="elecL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs></svg>
 <div id="app">
   <!-- TAB 1: MI-MARKETS -->
   <section class="tab on" id="tab-markets">
@@ -977,7 +1053,7 @@ const edgeFontCss=n=>(EDGE_FONTS.find(f=>f.n===n)||EDGE_FONTS[0]).css;
 const DEF = {
   edge:{on:true,items:EDGE_DEF.slice(),theme:Object.assign({},EDGE_THEME_DEF)},
   lists:[{id:'l1',name:'Watchlist 1',syms:['EURUSD','NAS100','BTCUSD']}], active:'l1',
-  theme:{bg:'#131722',accent:'#2962ff',up:'#089981',down:'#f23645'}, lang:'en', wake:false, speed:{move:.5,draw:.5}, dd:{color:'auto',w:2,dash:'solid'}, favs:['EURUSD','NAS100','BTCUSD'], favBar:true,
+  theme:{bg:'#ffffff',accent:'#2962ff',up:'#089981',down:'#f23645'}, themeMode:'white', lang:'en', wake:false, speed:{move:.5,draw:.5}, dd:{color:'auto',w:2,dash:'solid'}, favs:['EURUSD','NAS100','BTCUSD'], favBar:true,
   chart:{sym:'NAS100',tf:'1h',inds:{vol:true}}, draws:{}, user:null
 };
 const LS = 'micharts_v1';
@@ -991,7 +1067,7 @@ let S = (function(){
 S.speed=Object.assign({},DEF.speed,S.speed||{}); S.dd=Object.assign({},DEF.dd,S.dd||{}); if(!Array.isArray(S.favs)) S.favs=DEF.favs.slice(); if(S.favBar===undefined) S.favBar=true;
 S.grid=Object.assign({h:true,v:true,style:'solid',a:.2},S.grid||{}); S.alerts=S.alerts||[];
 S.edge=Object.assign({on:true,items:EDGE_DEF.slice()},S.edge||{}); if(!Array.isArray(S.edge.items)||S.edge.items.length!==6) S.edge.items=EDGE_DEF.slice();
-if(S.theme.bg==='#0f1115') S.theme.bg='#131722'; if(!S.theme.up) S.theme.up='#089981'; if(!S.theme.down) S.theme.down='#f23645';
+if(S.theme.bg==='#0f1115') S.theme.bg='#131722'; if(!S.themeMode) S.themeMode=(S.theme.bg==='#ffffff')?'white':'dark'; if(!S.theme.up) S.theme.up='#089981'; if(!S.theme.down) S.theme.down='#f23645';
 try{ const pf=JSON.parse(localStorage.getItem('micharts_prefs')||'null'); if(pf){ Object.keys(pf).forEach(k=>{ if(pf[k]!==undefined&&pf[k]!==null) S[k]=pf[k]; }); S.theme=Object.assign({},DEF.theme,S.theme||{}); S.grid=Object.assign({h:true,v:true,style:'solid',a:.2},S.grid||{}); } }catch(e){}
 (function purgeRemoved(){ const R=x=>REMOVED.includes(x), FB='NAS100';
   (S.lists||[]).forEach(l=>{ l.syms=(l.syms||[]).filter(x=>!R(x)).slice(0,3); });
@@ -1172,18 +1248,19 @@ function allTF(){ return TFS.slice(); }
 async function fetchAgg(sym,tf){
   const sec=TFSEC[tf]; let base='1m', bsec=60;
   STD_BASE.forEach(([k,v])=>{ if(v<sec && sec%v===0 && v>bsec){ base=k; bsec=v; } });
-  const r=await fetchCandles(sym, base); const map=new Map();
+  const r=await fetchCandles(sym, base, undefined, 1000); const map=new Map();
   r.c.forEach(x=>{ const b=Math.floor(x.t/sec)*sec, g=map.get(b);
     if(!g) map.set(b,{t:b,o:x.o,h:x.h,l:x.l,c:x.c,v:x.v||0}); else { g.h=Math.max(g.h,x.h); g.l=Math.min(g.l,x.l); g.c=x.c; g.v+=x.v||0; } });
   return {c:[...map.values()].sort((a,b)=>a.t-b.t), src:r.src};
 }
-async function fetchCandles(sym, tf, endT){
+async function fetchCandles(sym, tf, endT, lim){
+  lim=lim||300;
   if(TFSEC[tf]<60) return fetchSecondBars(sym,tf);
   if(!TFS.includes(tf)) return fetchAgg(sym,tf);
   const p = prov(sym);
   if(p==='bn'){
     try{
-      let j; const q='?symbol='+ins(sym).bn+'&interval='+BNI[tf]+'&limit=1000'+(endT?'&endTime='+Math.floor(endT*1000):'');
+      let j; const q='?symbol='+ins(sym).bn+'&interval='+BNI[tf]+'&limit='+Math.min(1000,lim)+(endT?'&endTime='+Math.floor(endT*1000):'');
       try{ j = await (await fetchT('https://data-api.binance.vision/api/v3/klines'+q)).json(); }
       catch(e){ j = await (await fetchT('https://api.binance.com/api/v3/klines'+q)).json(); }
       if(!Array.isArray(j)) throw new Error('Binance error');
@@ -1191,8 +1268,9 @@ async function fetchCandles(sym, tf, endT){
     }catch(e){ bnState.fail=3; return fetchCandles(sym, tf, endT); }
   }
   if(p==='yf') return yfCandles(sym,tf,endT);
+  lim=lim;
   if(p==='td'){
-    const j = await tdGet('time_series?symbol='+encodeURIComponent(ins(sym).td)+'&interval='+TDI[tf]+'&outputsize=1000&timezone=UTC'+(endT?'&end_date='+encodeURIComponent(new Date(endT*1000).toISOString().slice(0,19).replace('T',' ')):''));
+    const j = await tdGet('time_series?symbol='+encodeURIComponent(ins(sym).td)+'&interval='+TDI[tf]+'&outputsize='+Math.min(1000,lim)+'&timezone=UTC'+(endT?'&end_date='+encodeURIComponent(new Date(endT*1000).toISOString().slice(0,19).replace('T',' ')):''));
     const mu=ins(sym).mul||1; const c=(j.values||[]).map(x=>({t:parseT(x.datetime),o:+x.open*mu,h:+x.high*mu,l:+x.low*mu,c:+x.close*mu,v:+(x.volume||0)})).reverse();
     if(!c.length) throw new Error(t('noData'));
     return {c, src:'Twelve Data'};
@@ -1208,7 +1286,7 @@ function schedTick(){
   if(!(TWELVE_KEY||TD_PROXY) || budgetLeft()<=1 || Date.now()<tdCool || tdDay(0)>=TD_DAY) return;
   let best=null, bs=1;
   need.forEach(sym=>{ if(prov(sym)!=='td') return; const q=Q[sym]||{}; const age=Date.now()-Math.max(q.t||0,q.tryT||0);
-    const target=(sym===S.chart.sym&&curTab==='charts')?30000:60000; const sc=age/target; if(sc>bs){bs=sc;best=sym;} });
+    const target=((sym===S.chart.sym&&curTab==='charts')?30000:60000)*(SLOWNET()?2:1); const sc=age/target; if(sc>bs){bs=sc;best=sym;} });
   if(best) fetchQuote(best);
 }
 
@@ -1536,7 +1614,7 @@ function renderSettings(){
   $('#setGrid').innerHTML=
     edgeBlock()+
     row('appearance',IC.palette,L('App Management','应用管理'),null,apChev)+
-    (APOPEN?'<div class="apdd">'+row('install',IC.bulb,L('Install app','安装应用'),null)+row('themes',IC.palette,L('App theme','应用主题'),themeLabel())+row('font',IC.font,L('Font','字体'),FN)+row('bold',IC.font,L('Bold text','粗体文字'),null,tog(S.bold))+row('wake',IC.bulb,t('wake'),null,tog(S.wake))+'</div>':'')+
+    (APOPEN?'<div class="apdd">'+row('signout',IC.bulb,L('Sign out','退出登录'),(window.miAuth&&miAuth.email())||'')+row('install',IC.bulb,L('Install app','安装应用'),null)+row('themes',IC.palette,L('App theme','应用主题'),themeLabel())+row('font',IC.font,L('Font','字体'),FN)+row('bold',IC.font,L('Bold text','粗体文字'),null,tog(S.bold))+row('wake',IC.bulb,t('wake'),null,tog(S.wake))+'</div>':'')+
     row('lang',IC.globe,t('lang'),S.lang==='zh'?'简体中文':'English')+
     row('help',IC.help,L('Help center','帮助中心'),null);
 }
@@ -1603,8 +1681,10 @@ function openHelp(){
   sheet('Help center','<div class="note" style="margin:0 0 8px">Learn the app in a few minutes.</div>'+
     '<button class="srow" data-h="tut"><span class="sic">'+IC.help+'</span><span class="sl">Start tutorial now</span><span class="chev">'+IC.chev+'</span></button>'+
     '<button class="srow" data-h="auto"><span class="sic">'+IC.help+'</span><span class="sl">Auto-label the app</span><span class="chev">'+IC.chev+'</span></button>'+
-    '<button class="srow" data-h="toggle"><span class="sic">'+IC.help+'</span><span class="sl">Auto-label new areas</span><span class="tg'+(S.helpAuto!==false?' on':'')+'"><i></i></span></button>', b=>{
+    '<button class="srow" data-h="toggle"><span class="sic">'+IC.help+'</span><span class="sl">Auto-label new areas</span><span class="tg'+(S.helpAuto!==false?' on':'')+'"><i></i></span></button>'+
+    '<button class="srow" data-h="labels"><span class="sic">'+IC.help+'</span><span class="sl">Show names under tab icons</span><span class="tg'+(S.navLabels===true?' on':'')+'"><i></i></span></button>', b=>{
     b.addEventListener('click',e=>{ const x=e.target.closest('[data-h]'); if(!x) return;
+      if(x.dataset.h==='labels'){ S.navLabels=!(S.navLabels===true); applyNavLabels(); save(); closeSheet(); openHelp(); return; }
       if(x.dataset.h==='toggle'){ S.helpAuto=!(S.helpAuto!==false); save(); closeSheet(); openHelp(); return; }
       closeSheet(); runGuide(GUIDE, x.dataset.h==='tut'); });
   });
@@ -1625,7 +1705,7 @@ $('#setGrid').addEventListener('click',e=>{ const r=e.target.closest('[data-act]
   if(a==='edgeTog'){ S.edge.on=!S.edge.on; edgeI=0; save(); edgeTick(); renderSettings(); return; }
   if(a==='edgeNew'){ openEdgeEdit(); return; }
   if(a==='edgeTheme'){ openEdgeTheme(); return; }
-  if(a==='sign') signClick(); else if(a==='help') openHelp(); else if(a==='appearance'){ APOPEN=!APOPEN; renderSettings(); } else if(a==='install') installApp(); else if(a==='speed') openSpeed(); else if(a==='font') openFontSheet(); else if(a==='themes') openThemes(); else if(a==='alerts') openAlerts();
+  if(a==='sign') signClick(); else if(a==='help') openHelp(); else if(a==='appearance'){ APOPEN=!APOPEN; renderSettings(); } else if(a==='install') installApp(); else if(a==='signout'){ if(confirm('Sign out of Mi-Charts?')) miAuth.out(); } else if(a==='speed') openSpeed(); else if(a==='font') openFontSheet(); else if(a==='themes') openThemes(); else if(a==='alerts') openAlerts();
   else if(a==='saved') openSaved(); else if(a==='bold'){ S.bold=!S.bold; save(); applyTheme(); renderSettings(); } else if(a==='wake'){ setWake(!S.wake); renderSettings(); } else if(a==='lang') openLang(); });
 let REPLAYS=[]; try{ REPLAYS=JSON.parse(localStorage.getItem('micharts_replays')||'[]')||[]; }catch(e){ REPLAYS=[]; }
 function saveReplays(){ try{ localStorage.setItem('micharts_replays', JSON.stringify(REPLAYS)); return true; }catch(e){ return false; } }
@@ -2070,6 +2150,8 @@ function drawPanel(){
       for(let i=i1;i>=i0;i--){ if(isNaN(V.L[i])) continue; ctx.lineTo(xOf(i,L),SC.y(V.L[i])); } ctx.closePath(); ctx.fill(); }
     else line(V,c.c,c.w); });
   drawCompare(L);
+  { const Rd=BOUND&&BOUND.rep; if(Rd&&Rd.on&&Rd.demoN>0&&Rd.demoN<=n){ const bx=Math.round(xOf(Rd.demoN-0.5,L))+.5;
+      if(bx>0&&bx<L.plotW){ ctx.save(); ctx.setLineDash([5,4]); ctx.strokeStyle=T.accent; ctx.globalAlpha=.7; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(bx,0); ctx.lineTo(bx,L.main.y1); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha=1; ctx.fillStyle=T.accent; ctx.font='bold 10px system-ui,sans-serif'; ctx.textAlign='right'; ctx.fillText('DEMO',bx-5,14); ctx.textAlign='left'; ctx.fillText('REAL',bx+5,14); ctx.restore(); } } }
   /* last price line */
   const last=candles[n-1], ly=SC.y(last.c); ctx.setLineDash([3,3]); ctx.strokeStyle=cl(last); ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,Math.round(ly)+.5); ctx.lineTo(L.plotW,Math.round(ly)+.5); ctx.stroke(); ctx.setLineDash([]);
   (S.alerts||[]).forEach(a=>{ if(a.sym!==sym) return; const y=Math.round(SC.y(a.price))+.5; if(y<0||y>L.main.y1) return; const st=alState(a), col=st==='off'?'#7a808c':'#ff9800';
@@ -2446,7 +2528,7 @@ $('#latestBtn').onclick=()=>{ const target=candles.length-1+Math.round((LY.plotW
 
 /* ---- pointer gestures ---- */
 const ZT={on:false,bs:0,right:0,last:0,n:0};
-function zoomTo(bs,right){ ZT.bs=clamp(bs,0.25,400); ZT.right=right; if(!ZT.on){ ZT.on=true; ZT.last=performance.now(); ZT.n=0; requestAnimationFrame(zoomStep); } }
+function zoomTo(bs,right){ ZT.bs=clamp(bs,0.25,400); ZT.right=right; ZT.on=false; view.bs=ZT.bs; view.right=right; clampView(); requestDraw(); }
 function zoomStep(now){
   if(!ZT.on) return;
   const dt=Math.min(50,Math.max(1,now-ZT.last)); ZT.last=now; ZT.n++;
@@ -3034,6 +3116,24 @@ async function loadChart(force){
   await loadChartCore(force);
   if(keepT!=null) await startReplayAt(keepT);
 }
+const IDBP=new Promise(res=>{ try{ const q=indexedDB.open('mi-charts',1); q.onupgradeneeded=()=>q.result.createObjectStore('c'); q.onsuccess=()=>res(q.result); q.onerror=()=>res(null); }catch(e){ res(null); } });
+async function idbGet(k){ const d=await IDBP; if(!d) return null; return new Promise(r=>{ try{ const q=d.transaction('c').objectStore('c').get(k); q.onsuccess=()=>r(q.result||null); q.onerror=()=>r(null); }catch(e){ r(null); } }); }
+async function idbSet(k,v){ const d=await IDBP; if(!d) return; try{ d.transaction('c','readwrite').objectStore('c').put(v,k); }catch(e){} }
+const SLOWNET=()=>{ const c=navigator.connection; return !!(c&&(c.saveData||/(^|-)2g|3g/.test(c.effectiveType||''))); };
+function mergeC(a,b){ const m=new Map(); a.forEach(x=>m.set(x.t,x)); b.forEach(x=>m.set(x.t,x)); return [...m.values()].sort((x,y)=>x.t-y.t); }
+function saveCache(key,cs,srcName,sv){ if(srcName==='demo') return; idbSet(key,{c:cs.slice(-1500),src:srcName,sv:!!sv,at:Date.now()}); }
+function deepen(sym,tf,seq,P,key){
+  if(SLOWNET()||prov(sym)==='demo') return;
+  setTimeout(async()=>{
+    try{ if(loadSeq!==seq||candles.length>=900||candles.length<20) return; const first=candles[0].t;
+      const r=await fetchCandles(sym,tf,first-1,700); const older=r.c.filter(x=>x.t<first); if(!older.length) return;
+      withPanel(P,()=>{ if(loadSeq!==seq||repOf(P).on||!candles.length||candles[0].t!==first) return;
+        if(synthVol) older.forEach(x=>{ x.v=Math.round((x.h-x.l)/x.c*1e6+1); });
+        const n=older.length; candles=older.concat(candles); view.right+=n; calcInd(); cross=null; requestDraw();
+        CC[key]={c:candles.map(x=>({...x})),at:Date.now(),sv:synthVol,src}; saveCache(key,candles,src,synthVol); });
+    }catch(e){}
+  },1800);
+}
 async function loadChartCore(force){
   const P=BOUND, act=isActB(); if(repOf(P).on) exitReplay({silent:true}); const sym=sym0(), tf=tf0(), seq=++loadSeq, key=sym+'|'+tf;
   DR = S.draws[sym] || (S.draws[sym]=[]); peek=null; cross=null; sel=null; pending=null; if(!histBusy) histPush();
@@ -3041,15 +3141,31 @@ async function loadChartCore(force){
   fling=null; cross=null;
   const c=CC[key];
   if(c && !force && Date.now()-c.at<120000){ candles=c.c.map(x=>({...x})); synthVol=c.sv; src=c.src; calcInd(); resetView(); cv.style.opacity='1'; requestDraw(); return; }
-  errMsg=''; loadingMsg=candles.length?'':t('loading'); cv.style.opacity='.45'; requestDraw();
   let r=null, err=null;
+  if(!force && TFSEC[tf]>=60 && prov(sym)!=='demo'){
+    let cached=null; try{ cached=await idbGet(key); }catch(e){}
+    if(loadSeq!==seq) return;
+    if(cached&&cached.c&&cached.c.length>20){
+      const lastT=cached.c[cached.c.length-1].t, miss=Math.ceil((Date.now()/1000-lastT)/TFSEC[tf])+3;
+      if(miss<=280){
+        withPanel(P,()=>{ if(loadSeq!==seq) return; candles=cached.c.map(x=>({...x})); synthVol=!!cached.sv; src=cached.src; loadingMsg=''; errMsg=''; cv.style.opacity='1'; calcInd(); resetView(); });
+        requestDraw();
+        try{ r=await fetchCandles(sym,tf,undefined,Math.max(10,miss)); }catch(e){ return; }
+        withPanel(P,()=>{ if(loadSeq!==seq) return; const old=candles.length; let nw=r.c; if(synthVol) nw.forEach(x=>{ if(!x.v) x.v=Math.round((x.h-x.l)/x.c*1e6+1); });
+          candles=mergeC(candles,nw); view.right+=candles.length-old; src=r.src; calcInd(); cv.style.opacity='1';
+          CC[key]={c:candles.map(x=>({...x})),at:Date.now(),sv:synthVol,src}; saveCache(key,candles,src,synthVol); });
+        requestDraw(); deepen(sym,tf,seq,P,key); return;
+      }
+    }
+  }
+  errMsg=''; loadingMsg=candles.length?'':t('loading'); cv.style.opacity='.45'; requestDraw();
   try{ r=await fetchCandles(sym,tf); }catch(e){ err=e; }
   withPanel(P,()=>{
     if(loadSeq!==seq) return;
     if(err){ candles=[]; errMsg=sym+': '+(err.message||t('noData')); cv.style.opacity='1'; return; }
     let cs=r.c; synthVol=cs.length>0 && cs.every(x=>!x.v);
     if(synthVol) cs.forEach(x=>{ x.v=Math.round((x.h-x.l)/x.c*1e6+1); });
-    candles=cs; src=r.src; loadingMsg=''; cv.style.opacity='1'; CC[key]={c:cs.map(x=>({...x})),at:Date.now(),sv:synthVol,src}; calcInd(); resetView();
+    candles=cs; src=r.src; loadingMsg=''; cv.style.opacity='1'; CC[key]={c:cs.map(x=>({...x})),at:Date.now(),sv:synthVol,src}; saveCache(key,cs,src,synthVol); calcInd(); resetView(); deepen(sym,tf,seq,P,key);
     const q=Q[sym]; if(!q||q.price==null){ const l=cs[cs.length-1], o=cs[Math.max(0,cs.length-1-Math.round(86400/TFSEC[tf]))]; onQuote(sym,l.c,(l.c/o.o-1)*100,r.src); }
     if(synthVol && on('vol')) toast(t('synthVol'));
   });
@@ -3075,7 +3191,7 @@ function repPlay(on){
 }
 function repBackup(){ return {draws:JSON.parse(JSON.stringify(S.draws||{})), chart:JSON.parse(JSON.stringify(S.chart))}; }
 function exitReplay(opt){
-  const P=BOUND, R=repOf(P), silent=!!(opt&&opt.silent); clearInterval(R.timer); R.timer=null; R.playing=false;
+  const P=BOUND, R=repOf(P), silent=!!(opt&&opt.silent); R.demoN=0; R.demoT=0; clearInterval(R.timer); R.timer=null; R.playing=false;
   if(!R.on) return;
   const B=R.backup; R.backup=null; R.on=false; R.full=[];
   if(B){
@@ -3086,19 +3202,43 @@ function exitReplay(opt){
   }
   candles=R.full.length?R.full:candles; calcInd(); view.right=candles.length-1+0.5; requestDraw(); updReplayBar();
 }
+const DEMO_MAX=120000, DEMO_YEARS=5;
+function demoBefore(sym,tf,real,untilT){
+  const sec=TFSEC[tf], first=real[0], crypto=ins(sym).cls==='crypto', samp=real.slice(0,400);
+  let m=0,s2=0,k=0,vs=0; for(let i=1;i<samp.length;i++){ const x=Math.log(samp[i].c/samp[i-1].c); if(isFinite(x)){ m+=x; s2+=x*x; k++; } vs+=samp[i].v||0; }
+  const sd=k>5?Math.sqrt(Math.max(0,s2/k-(m/k)*(m/k))):0, sg=Math.max(sd,VOLS[ins(sym).cls]*Math.sqrt(sec/60)*0.5,1e-5), avgV=Math.max(1,vs/Math.max(1,samp.length-1));
+  const r=mulberry(hash(sym+tf+'demo-back')), g=()=>(r()+r()+r()-1.5)*2, anchor=first.o; let p=first.o, t=first.t-sec; const out=[];
+  while(t>=untilT && out.length<DEMO_MAX){
+    if(!crypto){ const dw=new Date(t*1000).getUTCDay(); if(dw===6||dw===0){ t-=sec; continue; } }
+    const c=p; let o=c/(1+g()*sg); o*=1+Math.log(anchor/o)*0.0006;
+    const h=Math.max(o,c)*(1+Math.abs(g())*sg*.5), l=Math.min(o,c)*(1-Math.abs(g())*sg*.5);
+    out.push({t,o,h,l,c,v:Math.round(avgV*(.4+r()*1.2)),d:1}); p=o; t-=sec;
+  }
+  return out.reverse();
+}
 async function startReplayAt(ts){
 
   const P=BOUND, R=repOf(P), sym=P.chart.sym, tf=P.chart.tf;
   if(!R.on){ R.full=candles.slice(); if(!R.backup) R.backup=repBackup(); R.sym=sym; }
+  else if(R.demoN){ R.full=R.full.slice(R.demoN); }
+  R.demoN=0; R.demoT=0;
   toast(t('loading'));
-  let guard=0;
-  while(R.full.length && R.full[0].t>ts && guard<12){
+  let guard=0; const maxG=prov(sym)==='bn'?80:14;
+  while(R.full.length && R.full[0].t>ts && guard<maxG){
     guard++; let r=null;
-    try{ r=await fetchCandles(sym,tf,R.full[0].t-1); }catch(e){ break; }
+    try{ r=await fetchCandles(sym,tf,R.full[0].t-1,1000); }catch(e){ break; }
     const older=r.c.filter(x=>x.t<R.full[0].t); if(!older.length) break;
     R.full=older.concat(R.full);
+    if(guard%10===0) toast('Loading history… '+R.full.length.toLocaleString()+' candles');
   }
-  if(!R.full.length||R.full[0].t>ts){ toast('No history before that date'); return; }
+  if(!R.full.length){ toast('No history before that date'); return; }
+  if(R.full[0].t>ts){
+    const first=R.full[0].t, floor=first-DEMO_YEARS*365*86400;
+    const dm=demoBefore(sym,tf,R.full,Math.max(ts,floor));
+    if(dm.length){ R.full=dm.concat(R.full); R.demoN=dm.length; R.demoT=first;
+      toast('Real data ends '+new Date(first*1000).toISOString().slice(0,10)+'. Earlier candles are DEMO (not real prices).'); }
+    else { toast('No history before that date'); return; }
+  }
   let idx=0; for(let i=0;i<R.full.length;i++){ if(R.full[i].t<=ts) idx=i; else break; }
   R.on=true; R.playing=false; R.idx=idx;
   withPanel(P,()=>{ repApply(true); });
@@ -3106,7 +3246,7 @@ async function startReplayAt(ts){
 function openReplayDates(){
   const P=BOUND, R=repOf(P), src=R.on?R.full:candles; if(!src.length){ toast(t('loading')); return; }
   const def=src[Math.max(0,src.length-101)].t, fmt=x=>new Date(x*1000).toISOString().slice(0,16);
-  sheet('Bar replay','<div class="lb2">Start from (UTC)</div><div class="crow"><span>Date & time</span><input type="datetime-local" id="rpDt" value="'+fmt(def)+'" style="width:200px;margin:0"></div><div class="note">Pick any date. Earlier dates load older history automatically, then play forward.</div><button class="pbtn" id="rpGo">Start replay</button>', b=>{
+  sheet('Bar replay','<div class="lb2">Start from (UTC)</div><div class="crow"><span>Date & time</span><input type="datetime-local" id="rpDt" value="'+fmt(def)+'" style="width:200px;margin:0"></div><div class="note">Pick any date. Earlier dates load older real history automatically. Where real data runs out, DEMO candles (not real prices) fill up to 5 years back so you can still practise.</div><button class="pbtn" id="rpGo">Start replay</button>', b=>{
     b.querySelector('#rpGo').onclick=()=>{ const v=b.querySelector('#rpDt').value; if(!v) return; const ts=Date.parse(v+':00Z')/1000; closeSheet(); startReplayAt(ts); };
   });
 }
@@ -3121,7 +3261,7 @@ function updReplayBar(){
     '<button class="rb rbp" id="rbPlay" aria-label="play or pause">'+(R.playing?IC.pause:IC.play)+'</button>'+
     '<button class="rb rbs" id="rbSpd" aria-label="speed">'+(R.speed||1)+'x</button>'+
     '<button class="rb" id="rbNext" aria-label="next bar">'+IC.stepF+'</button>'+
-    '<span class="rbt">'+esc(fmtTime(cur.t,'full'))+'</span>'+
+    '<span class="rbt">'+esc(fmtTime(cur.t,'full'))+(cur.d?' · <b style="color:#f5a623">DEMO</b>':'')+'</span>'+
     '<button class="rb" id="rbSave" aria-label="save replay">'+IC.store+'</button>'+
     '<button class="rb" id="rbX" aria-label="stop replay">'+IC.x+'</button>';
 }
@@ -3575,13 +3715,15 @@ function showTab(name){
   if(name!=='charts' && document.body.classList.contains('fs')) toggleFS();
 }
 document.querySelectorAll('nav button').forEach(b=>{ b.querySelector('.ic').innerHTML=IC[b.dataset.tab]; b.onclick=()=>showTab(b.dataset.tab); });
+function applyNavLabels(){ document.body.classList.toggle('nolbl',S.navLabels!==true); }
+applyNavLabels();
 
 /* ---------------- boot ---------------- */
 initPanels(); PANELS.forEach(P=>{ regCustom(P.chart.tf); if(!TFSEC[P.chart.tf]) P.chart.tf='1h'; if(TFSEC[P.chart.tf]<60) P.chart.tf='1m'; });
 regCustom(S.chart.tf); if(!TFSEC[S.chart.tf]) S.chart.tf='1h'; if(TFSEC[S.chart.tf]<60) S.chart.tf='1m';
 applyTheme(); applyLang(); renderToolFav(); edgeTick(); if(S.themeMode==='device') setThemeMode('device'); try{ matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{ if(S.themeMode==='device') setThemeMode('device'); }); }catch(e){} $('#moreBtn').innerHTML=IC.more; (S.customTF||[]).forEach(regCustom);
 setInterval(schedTick,1500); setInterval(()=>{ if(document.hidden) return; if(curTab==='charts'){ const q=Q[sym0()]; if(TFSEC[tf0()]<60&&q&&q.price!=null) chartTick(q.price); requestDraw(); } },1000); setInterval(()=>{ updDot(); if(curTab==='markets') renderMarkets(); },30000);
-bnState.fail=3; scheduleMarkets(); fbInit(); if(S.wake){ setWake(true,true); document.addEventListener('pointerdown',function f(){ if(S.wake&&!wl&&!nsV) setWake(true,true); document.removeEventListener('pointerdown',f); }); }
+scheduleMarkets(); fbInit(); if(S.wake){ setWake(true,true); document.addEventListener('pointerdown',function f(){ if(S.wake&&!wl&&!nsV) setWake(true,true); document.removeEventListener('pointerdown',f); }); }
 loadChart(); if(PANELS.length>1&&S.layout.n===2) withPanel(PANELS[1],()=>loadChart());
 setTimeout(()=>autoLabelArea(curTab),1800);
 /* ---------------- journal ---------------- */
@@ -3966,6 +4108,8 @@ function place(){
   const w=innerWidth,h=innerHeight, p=A.pos||{fx:.82,fy:.34};
   orb.style.left=Math.round(clamp(p.fx*w,4,w-48))+'px'; orb.style.top=Math.round(clamp(p.fy*h,4,h-110))+'px';
 }
+const MGCOLS=[['silver','none','linear-gradient(145deg,#d9dde3,#6b727d)'],['blue','sepia(1) hue-rotate(185deg) saturate(3.2) brightness(1.5)','linear-gradient(145deg,#7cb8ff,#1f5fd1)'],['purple','sepia(1) hue-rotate(235deg) saturate(3) brightness(1.5)','linear-gradient(145deg,#c39bff,#6a2fd0)'],['green','sepia(1) hue-rotate(78deg) saturate(3.2) brightness(1.5)','linear-gradient(145deg,#7fe3a4,#1f9a55)'],['red','sepia(1) hue-rotate(-32deg) saturate(3.5) brightness(1.5)','linear-gradient(145deg,#ff9b9b,#d12f2f)'],['gold','sepia(1) saturate(2.6) brightness(1.6)','linear-gradient(145deg,#ffe08a,#c58a12)'],['white','grayscale(1) brightness(2.1) contrast(.9)','linear-gradient(145deg,#ffffff,#c9ced6)']];
+function applyColor(){ const c=MGCOLS.find(x=>x[0]===(A.color||'silver'))||MGCOLS[0]; orb.style.filter=c[1]==='none'?'':c[1]; }
 function applyShow(){ orb.classList.toggle('show',!!A.on); if(!A.on) deactivate(); place(); }
 /* ---------- roam: drift slowly around the chart, all the time ---------- */
 const roam={x:0,y:0,tx:0,ty:0,vx:0,vy:0,wait:0,on:false,pause:0,t:0}; let roamT=0;
@@ -4244,6 +4388,8 @@ function openMenu(){
   const seg=(k,opts,cur)=>'<div class="seg" data-seg="'+k+'">'+opts.map(o=>'<button class="'+(o[0]===cur?'on':'')+'" data-v="'+o[0]+'">'+o[1]+'</button>').join('')+'</div>';
   const html='<div class="srow" id="miTog" style="cursor:pointer"><span class="sl">'+L('Mi-Guy assistant','Mi-Guy 助手')+'</span><span class="tg'+(A.on?' on':'')+'"><i></i></span></div>'+
   '<div class="srow" id="miConvo" style="cursor:pointer"><span class="sl">'+L('Hands-free conversation (keeps listening after a spoken answer)','免提对话（语音回答后继续聆听）')+'</span><span class="tg'+(A.convo?' on':'')+'"><i></i></span></div><div class="srow" id="miChat" style="cursor:pointer"><span class="sl">'+L('Chatty mode — Mi-Guy watches what I do and speaks up if something feels off','话痨模式：Mi-Guy 会留意我的操作，觉得不对时提醒我')+'</span><span class="tg'+(A.chatty?' on':'')+'"><i></i></span></div>'+seg('chatLvl',[['calm',L('Calm','安静')],['normal',L('Normal','适中')],['lively',L('Lively','活跃')]],A.chatLvl||'normal')+'<div class="srow" id="miGreet" style="cursor:pointer"><span class="sl">'+L('Say hi when I wake Mi-Guy','唤醒时打招呼')+'</span><span class="tg'+(A.greet?' on':'')+'"><i></i></span></div>'+
+  '<div class="srow" id="miRoam" style="cursor:pointer"><span class="sl">'+L('Floating around the chart','在图表上漂浮')+'</span><span class="tg'+(A.roam!==false?' on':'')+'"><i></i></span></div>'+
+  '<div class="lb2" style="margin-top:12px">'+L('Mi-Guy colour','Mi-Guy 颜色')+'</div><div id="miCols" style="display:flex;gap:10px;flex-wrap:wrap;padding:4px 0 6px">'+MGCOLS.map(c=>'<button data-mc="'+c[0]+'" aria-label="'+c[0]+'" style="width:34px;height:34px;border-radius:50%;border:2px solid '+((A.color||'silver')===c[0]?'var(--accent)':'var(--border)')+';background:'+c[2]+';padding:0"></button>').join('')+'</div>'+
   '<div class="lb2">'+L('Default answer method','默认回答方式')+'</div>'+seg('method',[['ask',L('Ask me','每次询问')],['text',L('Text','文字')],['audio',L('Audio','语音')]],A.method)+
   '<div class="lb2" style="margin-top:12px">'+L('Voice language','语音语言')+'</div>'+seg('vlang',[['auto',L('Auto','自动')],['en','English'],['zh','中文']],A.vlang)+
   '<div class="lb2" style="margin-top:12px">'+L('AI brain','AI 引擎')+'</div>'+seg('provider',[['gemini','Gemini (free)'],['claude','Claude']],A.provider)+
@@ -4258,6 +4404,8 @@ function openMenu(){
     b.addEventListener('click',e=>{
       if(e.target.closest('#miTog')){ A.on=!A.on; saveA(); applyShow(); b.querySelector('#miTog .tg').classList.toggle('on',A.on); renderSettings(); return; }
       if(e.target.closest('#miChat')){ A.chatty=!A.chatty; saveA(); b.querySelector('#miChat .tg').classList.toggle('on',A.chatty); if(A.chatty&&!(A.keys[A.provider]||'').trim()) toast(L('Add your AI key below so Mi-Guy can think','请先在下方填写 AI 密钥')); sig0=null; return; }
+      if(e.target.closest('#miRoam')){ A.roam=!(A.roam!==false); saveA(); b.querySelector('#miRoam .tg').classList.toggle('on',A.roam!==false); return; }
+      const mc=e.target.closest('[data-mc]'); if(mc){ A.color=mc.dataset.mc; saveA(); applyColor(); b.querySelectorAll('[data-mc]').forEach(x=>{ x.style.borderColor=x===mc?'var(--accent)':'var(--border)'; }); return; }
       if(e.target.closest('#miConvo')){ A.convo=!A.convo; saveA(); b.querySelector('#miConvo .tg').classList.toggle('on',A.convo); return; }
       if(e.target.closest('#miGreet')){ A.greet=!A.greet; saveA(); b.querySelector('#miGreet .tg').classList.toggle('on',A.greet); return; }
       const sg=e.target.closest('[data-seg] button'); if(sg){ const k=sg.parentNode.dataset.seg; if(k==='provider'){ const ki=b.querySelector('#miKey'), mi=b.querySelector('#miModel'); if(ki) A.keys[A.provider]=ki.value.trim(); if(mi&&mi.value.trim()) A.models[A.provider]=mi.value.trim(); } A[k]=sg.dataset.v; saveA(); sg.parentNode.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===sg)); if(k==='provider'){ closeSheet(); openMenu(); } renderSettings(); return; }
@@ -4337,7 +4485,7 @@ setInterval(chatPoll,1500);
   bar.addEventListener('pointercancel',()=>{ p0=null; },true); })();
 
 /* ---------- boot ---------- */
-applyShow();
+applyShow(); applyColor();
 try{ const rb=localStorage.getItem('mi_rolled'); if(rb){ localStorage.removeItem('mi_rolled'); setTimeout(()=>toast(L('A fix broke the app, so Mi-Guy switched it off.','某次修复导致应用异常，Mi-Guy 已将其关闭。')),1500); } }catch(_){}
 setTimeout(()=>{ try{ localStorage.setItem('mi_boot_try','0'); }catch(_){} },5000);
 window.MiGuy={ask:submit,activate,deactivate,run:runAction,repair};
