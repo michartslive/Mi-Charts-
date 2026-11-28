@@ -738,11 +738,14 @@ html,body{width:100%;min-width:100%;margin:0}
 @media (orientation:landscape){#setGrid>.topRow{flex:1 1 100%}}
 </style>
 <style id="mi-v4x">
-#spdPop{position:absolute;left:0;top:0;z-index:60;min-width:116px;padding:6px;border-radius:14px;background:var(--surface,#fff);border:1px solid var(--border,#d8dce3);box-shadow:0 10px 30px rgba(0,0,0,.22);animation:spp .14s ease-out}
+#spdPop{position:absolute;left:0;top:0;z-index:60;min-width:170px;padding:6px;border-radius:14px;background:var(--surface,#fff);border:1px solid var(--border,#d8dce3);box-shadow:0 10px 30px rgba(0,0,0,.22);animation:spp .14s ease-out}
 @keyframes spp{from{opacity:0;scale:.95}to{opacity:1;scale:1}}
+#spdPop button i{width:22px;height:22px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--text,#111) 45%,transparent);box-sizing:border-box;position:relative}
+#spdPop button.on i{border-color:var(--text,#111);background:var(--text,#111)}
+#spdPop button.on i:after{content:'';position:absolute;inset:6px;border-radius:50%;background:var(--surface,#fff)}
 #spdPop .sph{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;padding:4px 10px 6px}
-#spdPop button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:9px 10px;border:0;border-radius:9px;background:none;color:var(--text,#111);font-size:15px;font-weight:600}
-#spdPop button.on{background:var(--accent,#a9b0bb);color:#fff}
+#spdPop button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:11px 14px;border:0;border-radius:9px;background:none;color:var(--text,#111);font-size:16px;font-weight:500}
+#spdPop button.on{font-weight:700}
 .rbs{display:flex;align-items:center}
 </style>
 <style id="mi-v3">
@@ -760,6 +763,69 @@ html,body{width:100%;min-width:100%;margin:0}
 .tbar .tr .sp1{flex:1 0 6px}
 .tbar .tbtn{min-width:46px;justify-content:center}
 #symBtn,#tfs .tbtn{min-width:0}
+</style>
+<style id="mi-v5">
+nav svg{width:24px!important;height:24px!important;stroke-width:2!important}
+nav button{gap:2px}
+.tbar .tbtn svg,.tbar svg{stroke-width:1.9!important;width:22px!important;height:22px!important}
+#symBtn svg,#tfs svg{width:auto!important}
+.hub{padding:2px 4px 18px}
+.hub-h{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#7b8494);margin:16px 6px 8px}
+.hub-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hub-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.hub-t{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:92px;border:0;border-radius:16px;background:color-mix(in srgb,var(--text,#111) 6%,transparent);color:var(--text);font-size:14px;font-weight:500;letter-spacing:.2px;padding:12px 6px}
+.hub-t.s{min-height:84px;font-size:12.5px}
+.hub-t svg{width:28px!important;height:28px!important;stroke-width:1.7!important;color:var(--text)}
+.hub-t:active{transform:scale(.97);opacity:.8}
+#setGrid{justify-content:space-evenly!important;gap:0!important}
+#setGrid>.srow:not(.apdd .srow),#setGrid>.edgeBig{flex:0 0 auto!important;min-height:56px!important;height:56px;margin:0!important}
+#setGrid>.sgOut{flex:0 0 auto!important;min-height:0!important;margin:0!important}
+#setGrid .so{min-height:52px}
+.rbs svg{width:7px!important;height:4px!important;stroke-width:1!important;margin-left:4px}
+</style>
+
+
+<style id="mi-v5">
+nav button{color:var(--muted);padding:8px 0 5px;gap:3px;font-size:10.5px;font-weight:600}
+nav button.on{color:var(--accent)}
+nav button .ic svg,nav svg{width:25px!important;height:25px!important;stroke-width:2.1!important}
+.tbar .tbtn svg,.tbar svg{width:23px!important;height:23px!important;stroke-width:1.95!important;stroke-linecap:round;stroke-linejoin:round}
+.tbar .tbtn{min-width:48px;color:var(--text)}
+#setGrid{display:flex!important;flex-direction:column!important;gap:0!important;padding:18px 16px 18px!important;justify-content:flex-start}
+#setGrid>.srow:not(.apdd .srow):not(.sgOut){margin-top:auto!important;margin-bottom:auto!important}
+#setGrid>.srow:not(.apdd .srow),#setGrid>.edgeBig{flex:0 0 auto!important;min-height:0!important;height:58px;font-size:16px!important;border-radius:16px!important}
+#setGrid>.edgeBig{height:auto!important}
+#setGrid>.apdd{margin:-18px 6px 0}
+#setGrid>.sgOut{flex:0 0 auto!important;min-height:0;margin-top:0!important}
+#setGrid .so{height:54px}
+#replayBar{left:0!important;right:0!important;width:100%!important;top:auto!important;bottom:0!important;transform:none!important;border-radius:0!important;justify-content:space-around;padding:6px 8px!important;border:0!important;border-top:1px solid var(--border)!important;box-shadow:none!important;background:var(--surface,#fff)!important}
+#replayBar .rbg{display:none}
+#replayBar .rb svg{width:24px;height:24px;stroke-width:1.9}
+#replayBar .rbs{font-size:16px;font-weight:600;padding:0 10px;height:40px;border-radius:10px}
+#replayBar .rbt{font-size:11px;opacity:.7}
+#spdPop{min-width:190px;padding:6px 0;border-radius:6px;border:0;box-shadow:0 4px 22px rgba(0,0,0,.25);background:var(--surface,#fff)}
+#spdPop button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:0 22px;height:50px;border:0;background:none;border-radius:0;font-size:18px;font-weight:400;color:var(--text)}
+#spdPop button.on{background:none;color:var(--text)}
+#spdPop button i{width:26px;height:26px;border-radius:50%;border:1.6px solid var(--muted,#8a93a3);box-sizing:border-box;position:relative}
+#spdPop button.on i{background:var(--text);border-color:var(--text)}
+#spdPop button.on i:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--surface,#fff)}
+.soBox{text-align:center;padding:10px 6px 18px}
+.soIc{width:64px;height:64px;border-radius:50%;margin:6px auto 12px;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,#d64545 14%,transparent);color:#d64545}
+.soBox h3{margin:0 0 4px;font-size:19px}
+.soEm{font-size:13px;color:var(--muted);margin-bottom:10px}
+.soBox p{font-size:13.5px;line-height:1.5;color:var(--muted);margin:8px 14px 18px}
+.soGo,.soNo{display:block;width:100%;height:50px;border-radius:14px;border:0;font-size:16px;font-weight:600;margin-top:8px}
+.soGo{background:#d64545;color:#fff}.soNo{background:color-mix(in srgb,var(--text) 8%,transparent);color:var(--text)}
+.tgs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.tg1{padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:none;color:var(--text);font-size:13.5px;font-weight:600}
+.tg1.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tgC{width:100%;box-sizing:border-box;height:44px;border-radius:12px;border:1px solid var(--border);padding:0 12px;background:var(--surface);color:var(--text)}
+/* editor panels: grouped cards */
+.pro-sec{background:color-mix(in srgb,var(--text) 4%,transparent);border:1px solid var(--border);border-radius:16px;padding:12px 14px;margin:12px 0}
+.pro-sec>label,.pro-sec .lb2{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.pro-row{display:flex;align-items:center;justify-content:space-between;min-height:44px;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
+.pro-row:last-child{border-bottom:0}
+.pro-top{display:flex;align-items:center;gap:12px;padding:4px 2px 8px}
 </style>
 </head>
 <body><div id="miSplash"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d94a0"/><stop offset="1" stop-color="#b9bfc9"/></linearGradient><linearGradient id="sc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fafbfd"/><stop offset="1" stop-color="#d2d7df"/></linearGradient></defs><rect width="512" height="512" fill="url(#sg)"/><path d="M150 150V380" stroke="#2a2e36" stroke-width="16" fill="none"/><path d="M150 150V380" stroke="#f4f6f9" stroke-width="8" fill="none"/><rect x="122" y="190" width="56" height="150" rx="9" fill="#2a2e36"/><rect x="128" y="196" width="44" height="138" rx="6" fill="url(#sc)"/><path d="M256 110V340" stroke="#2a2e36" stroke-width="16" fill="none"/><path d="M256 110V340" stroke="#f4f6f9" stroke-width="8" fill="none"/><rect x="228" y="140" width="56" height="160" rx="9" fill="#2a2e36"/><rect x="234" y="146" width="44" height="148" rx="6" fill="url(#sc)"/><path d="M362 70V300" stroke="#2a2e36" stroke-width="16" fill="none"/><path d="M362 70V300" stroke="#f4f6f9" stroke-width="8" fill="none"/><rect x="334" y="100" width="56" height="160" rx="9" fill="#2a2e36"/><rect x="340" y="106" width="44" height="148" rx="6" fill="url(#sc)"/></svg><b>Mi-Charts</b><i></i></div>
@@ -906,7 +972,7 @@ const TD_PROXY = "/td/"; // Worker URL; also feeds NAS100 (Yahoo) through /yf/
 const FIREBASE_CONFIG = null;
 /* ===================================================================== */
 
-const MAX_PER_LIST = 3;
+const MAX_PER_LIST = 4, MAX_LISTS = 3;
 const TD_BUDGET = 8;            // Twelve Data free plan: 8 requests / minute
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -964,14 +1030,14 @@ const IC = {
   dots:'<svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.8" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.8" fill="currentColor" stroke="none"/></svg>',
   bell:'<svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0112 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 004 0"/></svg>',
   more:'<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>',
-  markets:'<svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>',
-  charts:'<svg viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 16l4-5 3 3 5-7"/></svg>',
-  settings:'<svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>',
-  pencil:'<svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg>',
+  markets:'<svg viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h10"/></svg>',
+  charts:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.2" fill="currentColor" stroke="none"/><path d="M7 14.6l3.2-3.8 2.8 2.4 4-5" stroke="var(--surface,#fff)" fill="none" stroke-width="2.1"/></svg>',
+  settings:'<svg viewBox="0 0 24 24"><path d="M3.5 7h8M17.5 7h3M3.5 17h3M12.5 17h8"/><circle cx="14.5" cy="7" r="2.6"/><circle cx="9.5" cy="17" r="2.6"/><path d="M3.5 12h2.5M11 12h9.5"/><circle cx="8.5" cy="12" r="0.01"/></svg>',
+  pencil:'<svg viewBox="0 0 24 24"><path d="M15.2 5.3l3.5 3.5"/><path d="M4.8 19.2l.9-4 9.9-9.9a2 2 0 012.8 0l.3.3a2 2 0 010 2.8l-9.9 9.9z"/><path d="M13 20h7"/></svg>',
   ind:'<svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 3 8-8"/><path d="M3 21h18"/></svg>',
   undo:'<svg viewBox="0 0 24 24"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/></svg>',
   redo:'<svg viewBox="0 0 24 24"><path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 000 12h3"/></svg>',
-  cam:'<svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>',
+  cam:'<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3.6"/><path d="M8.6 7l1.1-2.3h4.6L15.4 7"/><circle cx="12" cy="13.5" r="3.3"/></svg>',
   fs:'<svg viewBox="0 0 24 24"><path d="M4 9V7.5A3.5 3.5 0 0 1 7.5 4H9M15 4h1.5A3.5 3.5 0 0 1 20 7.5V9M20 15v1.5a3.5 3.5 0 0 1-3.5 3.5H15M9 20H7.5A3.5 3.5 0 0 1 4 16.5V15"/></svg>',
   fsx:'<svg viewBox="0 0 24 24"><path d="M9 4v1.5A3.5 3.5 0 0 1 5.5 9H4M15 4v1.5A3.5 3.5 0 0 0 18.5 9H20M9 20v-1.5A3.5 3.5 0 0 0 5.5 15H4M15 20v-1.5a3.5 3.5 0 0 1 3.5-3.5H20"/></svg>',
   user:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>',
@@ -1002,7 +1068,7 @@ const IC = {
   stepF:'<svg viewBox="0 0 24 24"><path d="M10 6l6 6-6 6"/></svg>',
   x:'<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
   help:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1-1.5 2.2"/><circle cx="12" cy="17" r="0.9" fill="currentColor"/></svg>',
-  journal:'<svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M16 7.5c0-1.4-1.8-2.5-4-2.5s-4 1.1-4 2.5 1.8 2.3 4 2.8 4 1.4 4 2.8-1.8 2.5-4 2.5-4-1.1-4-2.5"/></svg>',
+  journal:'<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2.8"/><path d="M9 2.8v2.6M12 2.8v2.6M15 2.8v2.6"/><path d="M8.6 10.5h6.8M8.6 14h6.8M8.6 17.4h4"/></svg>',
   calendar:'<svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>',
   search:'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>',
   swap:'<svg viewBox="0 0 24 24"><path d="M7 4v16M4 17l3 3 3-3M17 20V4M14 7l3-3 3 3"/></svg>',
@@ -1017,8 +1083,7 @@ const IC = {
 };
 
 /* ---------------- state / storage ---------------- */
-const CORE = ['NAS100','EURUSD','GBPUSD','USDJPY','BTCUSD'];
-const REMOVED = ['XAUUSD','XAGUSD','AUDUSD','USDCAD','USDCHF','EURGBP'];
+const REMOVED = ['XAUUSD','XAGUSD'];
 const INSTR = {
   NAS100:{n:'Nasdaq 100',td:'QQQ',mul:41.08,cls:'idx',dec:1,base:27900},
   EURUSD:{n:'Euro vs US Dollar',td:'EUR/USD',cls:'fx',dec:5,base:1.08},
@@ -1027,9 +1092,24 @@ const INSTR = {
   WTI:{n:'WTI Crude Oil',td:'WTI/USD',cls:'cfd',dec:2,base:70},
   BTCUSD:{n:'Bitcoin vs US Dollar',td:'BTC/USD',bn:'BTCUSDT',cls:'crypto',dec:2,base:90000}
 };
+(function(){
+  const CUR={EUR:'Euro',GBP:'Pound',AUD:'Aus Dollar',NZD:'NZ Dollar',USD:'US Dollar',CAD:'Can Dollar',CHF:'Franc',JPY:'Yen'};
+  const FXB={AUDUSD:.66,NZDUSD:.60,USDCAD:1.38,USDCHF:.88,EURGBP:.85,EURJPY:162,EURCHF:.95,EURAUD:1.64,EURNZD:1.80,EURCAD:1.49,GBPJPY:190,GBPCHF:1.12,GBPAUD:1.93,GBPNZD:2.12,GBPCAD:1.75,AUDJPY:98,AUDNZD:1.09,AUDCAD:.91,AUDCHF:.58,NZDJPY:90,NZDCAD:.83,NZDCHF:.53,CADJPY:108,CADCHF:.64,CHFJPY:170};
+  Object.keys(FXB).forEach(k=>{ const a=k.slice(0,3), b=k.slice(3); INSTR[k]={n:CUR[a]+' vs '+CUR[b],td:a+'/'+b,cls:'fx',dec:b==='JPY'?3:5,base:FXB[k]}; });
+  [['ETHUSD','Ethereum','ETHUSDT',3000],['SOLUSD','Solana','SOLUSDT',150],['XRPUSD','XRP','XRPUSDT',2],['BNBUSD','BNB','BNBUSDT',600],['ADAUSD','Cardano','ADAUSDT',.8],['DOGEUSD','Dogecoin','DOGEUSDT',.2],['AVAXUSD','Avalanche','AVAXUSDT',35],['LINKUSD','Chainlink','LINKUSDT',15],['LTCUSD','Litecoin','LTCUSDT',90]].forEach(x=>{ INSTR[x[0]]={n:x[1]+' vs US Dollar',td:x[0].slice(0,-3)+'/USD',bn:x[2],cls:'crypto',dec:x[3]<5?4:2,base:x[3]}; });
+  INSTR.US30={n:'Dow Jones 30 (via DIA ETF)',td:'DIA',mul:100,cls:'idx',dec:1,base:44000};
+  INSTR.SPX500={n:'S&P 500 (via SPY ETF)',td:'SPY',mul:10,cls:'idx',dec:1,base:6000};
+  INSTR.US2000={n:'Russell 2000 (via IWM ETF)',td:'IWM',mul:10,cls:'idx',dec:1,base:2300};
+  INSTR.EWG={n:'Germany ETF (iShares EWG)',td:'EWG',cls:'idx',dec:2,base:38};
+  [['AAPL','Apple',230],['MSFT','Microsoft',430],['NVDA','NVIDIA',140],['AMZN','Amazon',200],['GOOGL','Alphabet',175],['META','Meta',580],['TSLA','Tesla',330],['JPM','JPMorgan',240],['NFLX','Netflix',850],['AMD','AMD',140]].forEach(x=>{ INSTR[x[0]]={n:x[1],td:x[0],cls:'stk',dec:2,base:x[2]}; });
+})();
+const CORE = Object.keys(INSTR).filter(k=>k!=='WTI');
+
 function ins(sym){ return INSTR[sym] || (INSTR[sym] = {n:sym,td:sym,cls:'unk',dec:null,base:100,custom:true}); }
 const FLAG={USD:'🇺🇸',EUR:'🇪🇺',GBP:'🇬🇧',JPY:'🇯🇵',AUD:'🇦🇺',CAD:'🇨🇦',CHF:'🇨🇭',NZD:'🇳🇿',CNY:'🇨🇳'};
 const SYM_BADGE={NAS100:{t:'100',bg:'#1a9aa8'},WTI:{t:'OIL',bg:'#3b3f46'},BTCUSD:{t:'BTC',bg:'#f7931a'},ETHUSD:{t:'ETH',bg:'#627eea'},XAUUSD:{t:'XAU',bg:'#d4a017'},XAGUSD:{t:'XAG',bg:'#9aa3ad'}};
+const BADGE2={US30:['30','#2a5db0'],SPX500:['500','#b8312f'],US2000:['2K','#7a4fb5'],EWG:['DE','#444'],SOLUSD:['SOL','#9945ff'],XRPUSD:['XRP','#23292f'],BNBUSD:['BNB','#f3ba2f'],ADAUSD:['ADA','#0033ad'],DOGEUSD:['DOGE','#c2a633'],AVAXUSD:['AVX','#e84142'],LINKUSD:['LINK','#2a5ada'],LTCUSD:['LTC','#345d9d'],AAPL:['AAPL','#555'],MSFT:['MSFT','#0078d4'],NVDA:['NVDA','#76b900'],AMZN:['AMZN','#ff9900'],GOOGL:['GOOG','#4285f4'],META:['META','#0866ff'],TSLA:['TSLA','#cc0000'],JPM:['JPM','#5a4a3a'],NFLX:['NFLX','#b20710'],AMD:['AMD','#222']};
+Object.keys(BADGE2).forEach(k=>{ SYM_BADGE[k]={t:BADGE2[k][0],bg:BADGE2[k][1]}; });
 const _s=(inner,bg)=>'<svg viewBox="0 0 24 24" width="100%" height="100%" aria-hidden="true">'+(bg?'<rect width="24" height="24" fill="'+bg+'"/>':'')+inner+'</svg>';
 const FLAGSVG={
   USD:_s('<rect width="24" height="24" fill="#fff"/>'+[0,4,8,12,16,20].map(y=>'<rect y="'+y+'" width="24" height="2.4" fill="#d22f3a"/>').join('')+'<rect width="12" height="13" fill="#1f3f8f"/>'+[[3,3],[7,3],[11,3],[5,6],[9,6],[3,9],[7,9],[11,9]].map(q=>'<circle cx="'+q[0]+'" cy="'+q[1]+'" r=".9" fill="#fff"/>').join('')),
@@ -1208,17 +1288,18 @@ async function tdGet(path){
   return j;
 }
 async function yfGet(s,iv,rng){
-  const r=await fetchT(TD_PROXY+'yf/v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false');
+  const r=await fetchT('/yf/v8/finance/chart/'+encodeURIComponent(s)+'?interval='+iv+'&'+rng+'&includePrePost=false');
   const j=await r.json(); const res=j&&j.chart&&j.chart.result&&j.chart.result[0];
   if(!res) throw new Error((j&&j.chart&&j.chart.error&&j.chart.error.description)||'Data error'); return res;
 }
 const YFI={'1m':['1m',6],'5m':['5m',55],'15m':['15m',55],'30m':['30m',55],'1h':['60m',700],'4h':['60m',700],'1D':['1d',3650],'1W':['1wk',7300],'1M':['1mo',14600]};
+function yfSym(sym){ const I=ins(sym); if(I.cls==='fx') return I.td.replace('/','')+'=X'; if(I.cls==='crypto') return I.td.replace('/','-'); return I.td; }
 async function yfCandles(sym,tf,endT){
   const [iv,days]=YFI[tf]||YFI['1h']; const p2=Math.floor(endT||Date.now()/1000), p1=p2-days*86400;
-  const res=await yfGet(ins(sym).yf,iv,'period1='+p1+'&period2='+p2), ts=res.timestamp||[], Qt=(res.indicators&&res.indicators.quote&&res.indicators.quote[0])||{};
+  const res=await yfGet(ins(sym).yf||yfSym(sym),iv,'period1='+p1+'&period2='+p2), ts=res.timestamp||[], Qt=(res.indicators&&res.indicators.quote&&res.indicators.quote[0])||{};
   let c=[]; ts.forEach((t,i)=>{ const o=Qt.open[i],h=Qt.high[i],l=Qt.low[i],cl=Qt.close[i]; if(o==null||h==null||l==null||cl==null) return; c.push({t,o,h,l,c:cl,v:+(Qt.volume&&Qt.volume[i]||0)}); });
   if(tf==='4h'){ const m=new Map(); c.forEach(x=>{ const b=Math.floor(x.t/14400)*14400,g=m.get(b); if(!g) m.set(b,{t:b,o:x.o,h:x.h,l:x.l,c:x.c,v:x.v}); else{ g.h=Math.max(g.h,x.h); g.l=Math.min(g.l,x.l); g.c=x.c; g.v+=x.v; } }); c=[...m.values()]; }
-  if(!c.length) throw new Error(t('noData')); return {c,src:'Yahoo'};
+  const mu=ins(sym).mul||1; if(mu!==1) c=c.map(x=>({t:x.t,o:x.o*mu,h:x.h*mu,l:x.l*mu,c:x.c*mu,v:x.v})); if(endT) c=c.filter(x=>x.t<endT); if(!c.length) throw new Error(t('noData')); return {c,src:'Yahoo'};
 }
 function onQuote(sym, price, pct, src){
   const q = Q[sym] || (Q[sym]={}); q.price=price; q.pct=pct; q.t=Date.now(); q.src=src; q.err=null;
@@ -1238,10 +1319,10 @@ function mulberry(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul
 function hash(s){ let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return h>>>0; }
 const Dm = {};
 function demoInit(sym){ if(Dm[sym]) return Dm[sym]; const r=mulberry(hash(sym)), b=ins(sym).base||100; return Dm[sym]={p:b*(1+(r()-.5)*.004), o:b*(1+(r()-.5)*.012)}; }
-const VOLS = {fx:.00025,metal:.0004,crypto:.0008,idx:.0005,cfd:.0007,unk:.0006};
+const VOLS = {stk:.0006,fx:.00025,metal:.0004,crypto:.0008,idx:.0005,cfd:.0007,unk:.0006};
 function demoStep(sym){ const d=demoInit(sym), v=VOLS[ins(sym).cls]; d.p *= 1+(Math.random()-.5)*v*2; onQuote(sym,d.p,(d.p/d.o-1)*100,'demo'); }
 function genCandles(sym, tf){
-  const d=demoInit(sym), r=mulberry(hash(sym+tf)), n=420, sec=TFSEC[tf], sg=VOLS[ins(sym).cls]*Math.sqrt(sec/60)*2.2;
+  const d=demoInit(sym), r=mulberry(hash(sym+tf)), n=420, sec=TFSEC[tf], sg=VOLS[ins(sym).cls]*Math.sqrt(sec/60)*0.7;
   const g=()=>(r()+r()+r()-1.5)*2; const end=Math.floor(Date.now()/1000/sec)*sec; let p=1; const out=[];
   for(let i=0;i<n;i++){ const o=p, c=o*(1+g()*sg), h=Math.max(o,c)*(1+Math.abs(g())*sg*.5), l=Math.min(o,c)*(1-Math.abs(g())*sg*.5);
     out.push({t:end-(n-1-i)*sec,o,h,l,c,v:Math.round(200+r()*900)}); p=c; }
@@ -1296,10 +1377,12 @@ async function fetchCandles(sym, tf, endT, lim){
   if(p==='yf') return yfCandles(sym,tf,endT);
   lim=lim;
   if(p==='td'){
+   try{
     const j = await tdGet('time_series?symbol='+encodeURIComponent(ins(sym).td)+'&interval='+TDI[tf]+'&outputsize='+Math.min(1000,lim)+'&timezone=UTC'+(endT?'&end_date='+encodeURIComponent(new Date(endT*1000).toISOString().slice(0,19).replace('T',' ')):''));
     const mu=ins(sym).mul||1; const c=(j.values||[]).map(x=>({t:parseT(x.datetime),o:+x.open*mu,h:+x.high*mu,l:+x.low*mu,c:+x.close*mu,v:+(x.volume||0)})).reverse();
     if(!c.length) throw new Error(t('noData'));
     return {c, src:'Twelve Data'};
+   }catch(e){ if(endT&&TD_PROXY){ try{ return await yfCandles(sym,tf,endT); }catch(_){} } throw e; }
   }
   return {c:genCandles(sym,tf), src:'demo'};
 }
@@ -1509,17 +1592,19 @@ function openDotsMenu(){
   });
 }
 function openListSub(){
-  sheet(curList().name,
-    '<button class="srow msub" data-l="new"><span class="sic">'+IC.plus+'</span><span class="sl">Add new watchlist</span><span class="chev">'+IC.chev+'</span></button>'+
+  sheet('Watchlists',
+    S.lists.map(l=>'<button class="srow msub" data-w="'+l.id+'"><span class="sic">'+(l.id===S.active?IC.check:IC.list)+'</span><span class="sl">'+esc(l.name)+'</span><span class="sv">'+l.syms.length+'/'+MAX_PER_LIST+'</span></button>').join('')+
+    '<div class="lb2" style="margin-top:12px">Options</div>'+
+    (S.lists.length<MAX_LISTS?'<button class="srow msub" data-l="new"><span class="sic">'+IC.plus+'</span><span class="sl">Add new watchlist</span><span class="chev">'+IC.chev+'</span></button>':'')+
     '<button class="srow msub" data-l="edit"><span class="sic">'+IC.pencil+'</span><span class="sl">Edit watchlist</span><span class="chev">'+IC.chev+'</span></button>'+
     '<button class="srow msub msub-del" data-l="del"><span class="sic">'+IC.trash+'</span><span class="sl">Delete watchlist</span></button>', b=>{
-    b.addEventListener('click',e=>{ const x=e.target.closest('[data-l]'); if(!x) return; closeSheet();
+    b.addEventListener('click',e=>{ const w=e.target.closest('[data-w]'); if(w){ closeSheet(); S.active=w.dataset.w; save(); renderMarkets(); return; } const x=e.target.closest('[data-l]'); if(!x) return; closeSheet();
       if(x.dataset.l==='new') newWatchlist();
       else if(x.dataset.l==='edit'){ askText(t('listName'),curList().name).then(v=>{ if(v){ curList().name=v; save(); renderMarkets(); } }); }
       else deleteWatchlist(); });
   });
 }
-function newWatchlist(){ askText(t('listName'),'Watchlist '+(S.lists.length+1)).then(v=>{ if(v){ const l={id:uid(),name:v,syms:[]}; S.lists.push(l); S.active=l.id; save(); renderMarkets(); } }); }
+function newWatchlist(){ if(S.lists.length>=MAX_LISTS){ toast('Max '+MAX_LISTS+' watchlists'); return; } askText(t('listName'),'Watchlist '+(S.lists.length+1)).then(v=>{ if(v){ const l={id:uid(),name:v,syms:[]}; S.lists.push(l); S.active=l.id; save(); renderMarkets(); } }); }
 function deleteWatchlist(){
   if(S.lists.length<=1){ curList().syms=[]; toast('Watchlist cleared'); }
   else { S.lists=S.lists.filter(l=>l.id!==S.active); S.active=S.lists[0].id; toast('Watchlist deleted'); }
@@ -1533,8 +1618,7 @@ function openWatchlistSwitch(){
 (function(){ const el=$('#wlName'); let tapT=0, one=0;
   el.addEventListener('contextmenu',e=>e.preventDefault());
   el.addEventListener('click',e=>{ e.stopImmediatePropagation(); e.preventDefault(); const now=Date.now();
-    if(tapT&&now-tapT<320){ tapT=0; clearTimeout(one); try{ navigator.vibrate&&navigator.vibrate(12); }catch(_){} openListSub(); return; }
-    tapT=now; clearTimeout(one); one=setTimeout(()=>{ tapT=0; if(S.lists.length>1) openWatchlistSwitch(); },320); },true);
+    openListSub(); },true);
 })();
 
 /* ---------------- SETTINGS tab ---------------- */
@@ -1732,7 +1816,7 @@ $('#setGrid').addEventListener('click',e=>{ const r=e.target.closest('[data-act]
   if(a==='edgeTog'){ S.edge.on=!S.edge.on; edgeI=0; save(); edgeTick(); renderSettings(); return; }
   if(a==='edgeNew'){ openEdgeEdit(); return; }
   if(a==='edgeTheme'){ openEdgeTheme(); return; }
-  if(a==='sign') signClick(); else if(a==='help') openHelp(); else if(a==='appearance'){ APOPEN=!APOPEN; renderSettings(); } else if(a==='install') installApp(); else if(a==='signout'){ if(confirm('Sign out of Mi-Charts?')) miAuth.out(); } else if(a==='speed') openSpeed(); else if(a==='font') openFontSheet(); else if(a==='themes') openThemes(); else if(a==='alerts') openAlerts();
+  if(a==='sign') signClick(); else if(a==='help') openHelp(); else if(a==='appearance'){ APOPEN=!APOPEN; renderSettings(); } else if(a==='install') installApp(); else if(a==='signout'){ openSignOut(); } else if(a==='speed') openSpeed(); else if(a==='font') openFontSheet(); else if(a==='themes') openThemes(); else if(a==='alerts') openAlerts();
   else if(a==='saved') openSaved(); else if(a==='bold'){ S.bold=!S.bold; save(); applyTheme(); renderSettings(); } else if(a==='wake'){ setWake(!S.wake); renderSettings(); } else if(a==='lang') openLang(); });
 let REPLAYS=[]; try{ REPLAYS=JSON.parse(localStorage.getItem('micharts_replays')||'[]')||[]; }catch(e){ REPLAYS=[]; }
 function saveReplays(){ try{ localStorage.setItem('micharts_replays', JSON.stringify(REPLAYS)); return true; }catch(e){ return false; } }
@@ -2390,12 +2474,12 @@ function renderDrawingRaw(d, isPend){
       const inside=(y0,y1)=>Math.abs(y1-y0)>=24, txt=(t0,y,col)=>{ ctx.textAlign='left'; ctx.fillStyle=col; ctx.fillText(fit(t0),X1+8,y); };
       if(SH&&tTxt) txt(tTxt, inside(yE,yT)?yT+(yT<yE?11:-11):yT+(yT<yE?-11:11), GREEN);
       if(SH&&sTxt) txt(sTxt, inside(yE,yS)?yS+(yS<yE?11:-11):yS+(yS<yE?-11:11), RED);
-      const chip=(t0,xl,y,bg,fg)=>{ t0=d.tk?t0:fit(t0); const w=ctx.measureText(t0).width+12, h=16, x=Math.round(Math.min(xl,L.plotW-w-2)), yy=Math.round(y-h/2); ctx.fillStyle=bg; rr(x,yy,w,h,3); ctx.fill(); ctx.fillStyle=fg; ctx.textAlign='left'; ctx.fillText(t0,x+6,y+.5); };
+      const chip=(t0,xl,y,bg,fg)=>{ t0=d.tk?t0:fit(t0); const w=ctx.measureText(t0).width+12, h=16, x=Math.round(clamp((X1+X2)/2-w/2,2,L.plotW-w-2)), yy=Math.round(y-h/2); ctx.fillStyle=bg; rr(x,yy,w,h,3); ctx.fill(); ctx.fillStyle=fg; ctx.textAlign='left'; ctx.fillText(t0,x+6,y+.5); };
       const CX=d.tk?X2+10:X1+6;
       if((SH||d.tk)&&eTxt) chip(eTxt,CX,yE,hexA(T.bg,.92),T.text);
       if((SH||d.tk)&&pTxt) chip(pTxt,CX,yE+19,COL,tagFg(COL));
       if(done&&st.hitI>=0){ const xh=Math.round(xOf(st.hitI,L)), yH=SC.y(st.hitP); if(xh>X1&&xh<X2){ ctx.setLineDash([3,3]); ctx.lineWidth=1; ctx.strokeStyle=hexA(COL,.9); ctx.beginPath(); ctx.moveTo(xh+.5,yE); ctx.lineTo(xh+.5,yH); ctx.stroke(); ctx.setLineDash([]); ctx.beginPath(); ctx.arc(xh+.5,yH,3.5,0,7); ctx.fillStyle=COL; ctx.fill(); ctx.strokeStyle=T.bg; ctx.stroke(); } }
-      if(!isPend&&!exportMode&&sel===d.id){ const gx=Math.min(X2,L.plotW-12); ctx.setLineDash([]); const pill=(x,y,w,h,col)=>{ ctx.fillStyle=T.bg; rr(x,y,w,h,Math.min(w,h)/2); ctx.fill(); ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke(); };
+      if(!isPend&&!exportMode&&!d.locked&&sel===d.id){ const gx=Math.min(X2,L.plotW-12); ctx.setLineDash([]); const pill=(x,y,w,h,col)=>{ ctx.fillStyle=T.bg; rr(x,y,w,h,Math.min(w,h)/2); ctx.fill(); ctx.strokeStyle=col; ctx.lineWidth=1.5; ctx.stroke(); };
         pill(gx-11,yT-5,22,10,GREEN); pill(gx-11,yS-5,22,10,RED); pill(gx-5,yE-11,10,22,T.text); }
       break; }
     case 'text': { const fs=d.fs||13, bh=Math.round(fs*1.85); ctx.font=F(fs); const tx=d.text||'Text', tw=ctx.measureText(tx).width+Math.round(fs*1.1); ctx.fillStyle=hexA(c,.18); ctx.fillRect(q[0].x,q[0].y-bh/2,tw,bh); ctx.strokeStyle=c; ctx.lineWidth=1; ctx.strokeRect(q[0].x,q[0].y-bh/2,tw,bh); ctx.fillStyle=T.text; ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText(tx,q[0].x+Math.round(fs*0.55),q[0].y+1); break; }
@@ -2567,7 +2651,7 @@ function zoomTo(bs,right){ ZT.bs=clamp(bs,0.25,400); ZT.right=right; ZT.on=false
 function zoomStep(now){
   if(!ZT.on) return;
   const dt=Math.min(50,Math.max(1,now-ZT.last)); ZT.last=now; ZT.n++;
-  const k=1-Math.exp(-dt/9);
+  const k=1-Math.exp(-dt/3.5);
   view.bs+=(ZT.bs-view.bs)*k; view.right+=(ZT.right-view.right)*k; clampView(); requestDraw();
   const done=Math.abs(ZT.bs-view.bs)<0.003*Math.max(1,ZT.bs)&&Math.abs(ZT.right-view.right)<0.02;
   if(done||ZT.n>300){ view.bs=ZT.bs; view.right=ZT.right; clampView(); ZT.on=false; requestDraw(); return; }
@@ -3151,12 +3235,20 @@ function chartTick(price){
   indDirty=true; requestDraw();
 }
 async function loadChart(force){
-  const P=BOUND, R=repOf(P); let keepT=null;
+  const P=BOUND, R=repOf(P), sym=sym0(); let keepT=null, keepS=null, restore=null; P.repStash=P.repStash||{};
   if(R.on&&R.full.length){
-    keepT=R.full[R.idx].t; const B=R.backup; clearInterval(R.timer); R.timer=null; R.playing=false; R.on=false; R.full=[]; R.backup=B;
+    if(R.sym&&R.sym!==sym){ /* another instrument: park this replay session, keep it for later */
+      P.repStash[R.sym]={full:R.full,idx:R.idx,tf:R.tf,speed:R.speed,demoN:R.demoN,demoT:R.demoT,backup:R.backup};
+      clearInterval(R.timer); R.timer=null; R.playing=false; R.on=false; R.full=[]; R.backup=null; R.demoN=0; R.demoT=0;
+    } else { keepT=R.full[R.idx].t; keepS=R.full[0].t; const B=R.backup; clearInterval(R.timer); R.timer=null; R.playing=false; R.on=false; R.full=[]; R.backup=B; }
   }
+  if(!R.on&&keepT==null&&P.repStash[sym]){ restore=P.repStash[sym]; delete P.repStash[sym]; }
   await loadChartCore(force);
-  if(keepT!=null) await startReplayAt(keepT);
+  if(keepT!=null) await startReplayAt(keepT,keepS);
+  else if(restore&&restore.full.length){
+    if(restore.tf===tf0()){ R.backup=restore.backup; R.sym=sym; R.tf=restore.tf; R.full=restore.full; R.idx=restore.idx; R.demoN=restore.demoN; R.demoT=restore.demoT; R.speed=restore.speed; R.on=true; R.playing=false; withPanel(P,()=>{ repApply(true); }); toast('Replay resumed'); }
+    else { R.backup=restore.backup; await startReplayAt(restore.full[restore.idx].t,restore.full[0].t); }
+  }
 }
 const IDBP=new Promise(res=>{ try{ const q=indexedDB.open('mi-charts',1); q.onupgradeneeded=()=>q.result.createObjectStore('c'); q.onsuccess=()=>res(q.result); q.onerror=()=>res(null); }catch(e){ res(null); } });
 async function idbGet(k){ const d=await IDBP; if(!d) return null; return new Promise(r=>{ try{ const q=d.transaction('c').objectStore('c').get(k); q.onsuccess=()=>r(q.result||null); q.onerror=()=>r(null); }catch(e){ r(null); } }); }
@@ -3253,25 +3345,26 @@ const DEMO_MAX=120000, DEMO_YEARS=5;
 function demoBefore(sym,tf,real,untilT){
   const sec=TFSEC[tf], first=real[0], crypto=ins(sym).cls==='crypto', samp=real.slice(0,400);
   let m=0,s2=0,k=0,vs=0; for(let i=1;i<samp.length;i++){ const x=Math.log(samp[i].c/samp[i-1].c); if(isFinite(x)){ m+=x; s2+=x*x; k++; } vs+=samp[i].v||0; }
-  const sd=k>5?Math.sqrt(Math.max(0,s2/k-(m/k)*(m/k))):0, sg=Math.max(sd,VOLS[ins(sym).cls]*Math.sqrt(sec/60)*0.5,1e-5), avgV=Math.max(1,vs/Math.max(1,samp.length-1));
-  const r=mulberry(hash(sym+tf+'demo-back')), g=()=>(r()+r()+r()-1.5)*2, anchor=first.o; let p=first.o, t=first.t-sec; const out=[];
+  const sd=k>5?Math.sqrt(Math.max(0,s2/k-(m/k)*(m/k))):0, sg=Math.max(sd*0.7,VOLS[ins(sym).cls]*Math.sqrt(sec/60)*0.15,1e-5), avgV=Math.max(1,vs/Math.max(1,samp.length-1));
+  const BND=crypto?0.35:ins(sym).cls==='idx'?0.2:0.07, r=mulberry(hash(sym+tf+'demo-back')), g=()=>(r()+r()+r()-1.5)*2, anchor=first.o; let p=first.o, t=first.t-sec; const out=[];
   while(t>=untilT && out.length<DEMO_MAX){
     if(!crypto){ const dw=new Date(t*1000).getUTCDay(); if(dw===6||dw===0){ t-=sec; continue; } }
-    const c=p; let o=c/(1+g()*sg); o*=1+Math.log(anchor/o)*0.0006;
+    const c=p; let o=c/(1+g()*sg); o*=1+Math.log(anchor/o)*0.004; o=clamp(o,anchor*(1-BND),anchor*(1+BND));
     const h=Math.max(o,c)*(1+Math.abs(g())*sg*.5), l=Math.min(o,c)*(1-Math.abs(g())*sg*.5);
     out.push({t,o,h,l,c,v:Math.round(avgV*(.4+r()*1.2)),d:1}); p=o; t-=sec;
   }
   return out.reverse();
 }
-async function startReplayAt(ts){
+async function startReplayAt(ts,fillTs){
+  const fa=fillTs!=null?Math.min(fillTs,ts):ts;
 
   const P=BOUND, R=repOf(P), sym=P.chart.sym, tf=P.chart.tf;
   if(!R.on){ R.full=candles.slice(); if(!R.backup) R.backup=repBackup(); R.sym=sym; }
   else if(R.demoN){ R.full=R.full.slice(R.demoN); }
-  R.demoN=0; R.demoT=0;
+  R.demoN=0; R.demoT=0; R.tf=tf;
   toast(t('loading'));
   let guard=0; const maxG=prov(sym)==='bn'?80:14;
-  while(R.full.length && R.full[0].t>ts && guard<maxG){
+  while(R.full.length && R.full[0].t>fa && guard<maxG){
     guard++; let r=null;
     try{ r=await fetchCandles(sym,tf,R.full[0].t-1,1000); }catch(e){ break; }
     const older=r.c.filter(x=>x.t<R.full[0].t); if(!older.length) break;
@@ -3279,9 +3372,9 @@ async function startReplayAt(ts){
     if(guard%10===0) toast('Loading history… '+R.full.length.toLocaleString()+' candles');
   }
   if(!R.full.length){ toast('No history before that date'); return; }
-  if(R.full[0].t>ts){
+  if(R.full[0].t>fa){
     const first=R.full[0].t, floor=first-DEMO_YEARS*365*86400;
-    const dm=demoBefore(sym,tf,R.full,Math.max(ts,floor));
+    const dm=demoBefore(sym,tf,R.full,Math.max(fa,floor));
     if(dm.length){ R.full=dm.concat(R.full); R.demoN=dm.length; R.demoT=first;
       toast('Real data ends '+new Date(first*1000).toISOString().slice(0,10)+'. Earlier candles are DEMO (not real prices).'); }
     else { toast('No history before that date'); return; }
@@ -3297,12 +3390,12 @@ function openReplayDates(){
     b.querySelector('#rpGo').onclick=()=>{ const v=b.querySelector('#rpDt').value; if(!v) return; const ts=Date.parse(v+':00Z')/1000; closeSheet(); startReplayAt(ts); };
   });
 }
-const SPEEDS=[0.3,0.5,1,3,7,9];
+const SPEEDS=[10,7,5,3,1,0.5,0.3,0.2,0.1];
 function repSpeedMenu(){
   const old=$('#spdPop'); if(old){ old.remove(); return; }
   const R=repOf(BOUND), bar=$('#replayBar'), btn=$('#rbSpd'); if(!btn) return;
   const pop=document.createElement('div'); pop.id='spdPop';
-  pop.innerHTML='<div class="sph">Speed</div>'+SPEEDS.map(s=>'<button data-s="'+s+'" class="'+((R.speed||1)===s?'on':'')+'"><span>'+s+'x</span>'+((R.speed||1)===s?'<i>&#10003;</i>':'')+'</button>').join('');
+  pop.innerHTML=SPEEDS.map(s=>'<button data-s="'+s+'" class="'+((R.speed||1)===s?'on':'')+'"><span>'+s+'x</span><i></i></button>').join('');
   wrap.appendChild(pop);
   const wr=wrap.getBoundingClientRect(), br=btn.getBoundingClientRect(), pw=pop.offsetWidth, ph=pop.offsetHeight;
   let x=clamp(br.left-wr.left+br.width/2-pw/2,6,wr.width-pw-6), y=br.top-wr.top-ph-8; if(y<6) y=br.bottom-wr.top+8;
@@ -3319,7 +3412,7 @@ function updReplayBar(){
   bar.innerHTML='<span class="rbg" title="Drag">⋮⋮</span><button class="rb" id="rbDates" aria-label="replay dates">'+IC.back+'</button>'+
     '<button class="rb" id="rbPrev" aria-label="previous bar">'+IC.stepB+'</button>'+
     '<button class="rb rbp" id="rbPlay" aria-label="play or pause">'+(R.playing?IC.pause:IC.play)+'</button>'+
-    '<button class="rb rbs" id="rbSpd" aria-label="speed">'+(R.speed||1)+'x<svg viewBox="0 0 10 6" width="8" height="5" style="margin-left:3px"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>'+
+    '<button class="rb rbs" id="rbSpd" aria-label="speed">'+(R.speed||1)+'x<svg viewBox="0 0 10 6" width="7" height="4" style="margin-left:4px"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'+
     '<button class="rb" id="rbNext" aria-label="next bar">'+IC.stepF+'</button>'+
     '<span class="rbt">'+esc(fmtTime(cur.t,'full'))+(cur.d?' · <b style="color:#f5a623">DEMO</b>':'')+'</span>'+
     '<button class="rb" id="rbSave" aria-label="save replay">'+IC.store+'</button>'+
@@ -3628,7 +3721,12 @@ $('#undoBtn').onclick=undo; $('#redoBtn').onclick=redo;
 function shotChart(){
   if(!candles.length) return; exportMode=true; draw(); const url=cv.toDataURL('image/png'); exportMode=false; requestDraw();
   const name='MI-CHARTS_'+dispName(sym0())+'_'+tf0()+'.png';
-  sheet(t('saved'), '<img id="shot" src="'+url+'" alt="chart"><a class="pbtn" style="display:block;text-align:center;text-decoration:none" download="'+name+'" href="'+url+'">'+t('download')+'</a><div class="note">'+t('holdSave')+'</div>');
+  const TG=['Setup','Entry','Win','Loss','Review','Idea'], on=new Set();
+  sheet(t('saved'), '<img id="shot" src="'+url+'" alt="chart"><div class="lb2">Tags</div><div class="tgs">'+TG.map(x=>'<button class="tg1" data-tg="'+x+'">'+x+'</button>').join('')+'</div><input type="text" id="tgC" class="tgC" maxlength="24" placeholder="Custom tag, then press add"><button class="sbtn" id="tgA" style="margin:6px 0 10px">Add tag</button><a id="shotDl" class="pbtn" style="display:block;text-align:center;text-decoration:none" download="'+name+'" href="'+url+'">'+t('download')+'</a><div class="note">'+t('holdSave')+'</div>', b=>{
+    const upd=()=>{ const a=b.querySelector('#shotDl'), tg=[...on].map(x=>x.replace(/[^A-Za-z0-9_-]+/g,'-')).join('_'); a.download=name.replace(/\.png$/,'')+(tg?'_'+tg:'')+'.png'; b.querySelectorAll('.tg1').forEach(x=>x.classList.toggle('on',on.has(x.dataset.tg))); };
+    b.addEventListener('click',e=>{ const x=e.target.closest('.tg1'); if(x){ const k=x.dataset.tg; if(on.has(k)) on.delete(k); else on.add(k); upd(); } });
+    b.querySelector('#tgA').onclick=()=>{ const i=b.querySelector('#tgC'), v=i.value.trim(); if(!v) return; if(!b.querySelector('.tg1[data-tg="'+v.replace(/"/g,'')+'"]')){ const bt=document.createElement('button'); bt.className='tg1'; bt.dataset.tg=v; bt.textContent=v; b.querySelector('.tgs').appendChild(bt); } on.add(v); i.value=''; upd(); };
+  });
 }
 function mkThumb(){ const w=220, h=Math.max(40,Math.round(w*cv.height/cv.width)), o=document.createElement('canvas'); o.width=w; o.height=h; o.getContext('2d').drawImage(cv,0,0,w,h); return o.toDataURL('image/jpeg',.6); }
 function snapChart(){
@@ -3662,9 +3760,11 @@ function toggleFS(){
 $('#fsBtn').onclick=toggleFS;
 $('#refreshBtn').onclick=()=>{ resetView(); requestDraw(); };
 $('#moreBtn').onclick=()=>{
-  const items=[['indBtn','Indicators',IC.ind],['mgrBtn','Library',IC.list],['alerts','Alerts',IC.bell],['layout','Layout',IC.grid],['compare','Compare charts',CMPSVG],['hidechart',S.chart.hideC?'Show chart':'Hide chart',(IC.eye||IC.list)],['replay','Bar replay',IC.replay],['saved','Saved charts',IC.disk],['speed','Speed',IC.latest],['clear','Clear all',IC.trash]];
-  sheet('More','<div class="grid3 morem">'+items.map(([id,l,ic])=>'<button class="gi" data-act="'+id+'">'+ic+'<span>'+l+'</span></button>').join('')+'</div>', b=>{
-    b.addEventListener('click',e=>{ const g=e.target.closest('[data-act]'); if(!g) return; const id=g.dataset.act; closeSheet(); if(id==='imgBtn') toggleSavePop(); else if(id==='saved') openSaved(); else if(id==='layout') openLayout(); else if(id==='compare') openCompare(); else if(id==='hidechart'){ S.chart.hideC=!S.chart.hideC; save(); requestDraw(); toast(S.chart.hideC?'Chart hidden':'Chart shown'); } else if(id==='speed') openSpeed(); else if(id==='clear') clearAllChart(); else if(id==='replay'){ const R=repOf(BOUND); if(R.on) exitReplay(); else openReplayDates(); } else if(id==='alerts') openAlerts(); else $('#'+id).click(); });
+  const tile=([id,l,ic],cls)=>'<button class="hub-t '+(cls||'')+'" data-act="'+id+'">'+ic+'<span>'+l+'</span></button>';
+  const T1=[['indBtn','Indicators',IC.ind],['alerts','Alerts',IC.bell],['replay',repOf(BOUND).on?'Exit replay':'Bar replay',IC.replay],['mgrBtn','Library',IC.list]];
+  const T2=[['layout','Layout',IC.grid],['hidechart',S.chart.hideC?'Show chart':'Hide chart',(IC.eye||IC.list)],['saved','Saved charts',IC.disk]];
+  sheet('Chart hub','<div class="hub"><div class="hub-h">Tools</div><div class="hub-g">'+T1.map(x=>tile(x)).join('')+'</div><div class="hub-h">Chart</div><div class="hub-g3">'+T2.map(x=>tile(x,'s')).join('')+'</div></div>', b=>{
+    b.addEventListener('click',e=>{ const g=e.target.closest('[data-act]'); if(!g) return; const id=g.dataset.act; closeSheet(); if(id==='saved') openSaved(); else if(id==='layout') openLayout(); else if(id==='hidechart'){ S.chart.hideC=!S.chart.hideC; save(); requestDraw(); toast(S.chart.hideC?'Chart hidden':'Chart shown'); } else if(id==='replay'){ const R=repOf(BOUND); if(R.on) exitReplay(); else openReplayDates(); } else if(id==='alerts') openAlerts(); else $('#'+id).click(); });
   });
 };
 document.addEventListener('fullscreenchange',()=>{ if(!document.fullscreenElement && document.body.classList.contains('fs')){ document.body.classList.remove('fs'); buildToolbar(); setTimeout(resize,150); } });
@@ -3900,6 +4000,20 @@ function openEditAccount(id){
   const a=JR.accounts.find(x=>x.id===id); if(!a) return;
   sheet('Edit account','<div class="crow"><span>Name</span><input id="eaN" maxlength="30" value="'+esc(a.name)+'" style="width:180px;margin:0"></div><div class="crow"><span>Balance</span><input id="eaB" type="number" min="0" step="any" value="'+a.balance+'" style="width:180px;margin:0"></div><button class="pbtn" id="eaOk">Save</button>', b=>{
     b.querySelector('#eaOk').onclick=()=>{ const n=b.querySelector('#eaN').value.trim(), bal=+b.querySelector('#eaB').value; if(!n){ toast('Name the account'); return; } if(!(bal>0)){ toast('Enter a balance above 0'); return; } a.name=n; a.balance=bal; jSave(); closeSheet(); renderJournal(); toast('Account updated'); };
+  });
+}
+Object.assign(IC,{
+  markets:'<svg viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h10"/></svg>',
+  charts:'<svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.4" fill="currentColor" stroke="none"/><path d="M6.4 15.6l3.3-4.5 3 3 5-6.4" stroke="var(--surface,#fff)" fill="none" stroke-width="2.4"/><path d="M15.8 7.7h2.9v2.9" stroke="var(--surface,#fff)" fill="none" stroke-width="2.2"/></svg>',
+  journal:'<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="3"/><path d="M9 2.5v3.4M15 2.5v3.4M8.6 10.5h6.8M8.6 14.2h6.8M8.6 17.6h4"/></svg>',
+  settings:'<svg viewBox="0 0 24 24"><path d="M3.5 7h9M18.5 7h2M3.5 17h2M11.5 17h9"/><circle cx="15.5" cy="7" r="2.9"/><circle cx="8.5" cy="17" r="2.9"/></svg>',
+  pencil:'<svg viewBox="0 0 24 24"><path d="M14.4 5.2l4.4 4.4M5 19l.7-4.2L15.3 5.2a2.2 2.2 0 013.1 0l.4.4a2.2 2.2 0 010 3.1L9.2 18.3z"/><path d="M12.2 7.4l4.4 4.4" opacity=".55"/><path d="M13.5 20h6.5"/></svg>',
+  cam:'<svg viewBox="0 0 24 24"><path d="M4 8.5V6.5A2.5 2.5 0 016.5 4h2M15.5 4h2A2.5 2.5 0 0120 6.5v2M20 15.5v2a2.5 2.5 0 01-2.5 2.5h-2M8.5 20h-2A2.5 2.5 0 014 17.5v-2"/><circle cx="12" cy="12" r="3.4"/><path d="M12 9.6v-.01"/></svg>'
+});
+function openSignOut(){
+  let em=''; try{ const s=JSON.parse(localStorage.getItem('mi_sb_session')||sessionStorage.getItem('mi_sb_session')||'null'); em=(s&&s.email)||''; }catch(e){}
+  sheet('','<div class="soBox"><div class="soIc"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3"/><path d="M16 8l4 4-4 4M20 12H9"/></svg></div><h3>Sign out of Mi-Charts?</h3>'+(em?'<div class="soEm">'+esc(em)+'</div>':'')+'<p>Your charts, drawings and settings stay saved on this device. You will need to sign in again to continue.</p><button class="soGo" id="soGo">Sign out</button><button class="soNo" id="soNo">Stay signed in</button></div>', b=>{
+    b.querySelector('#soNo').onclick=closeSheet; b.querySelector('#soGo').onclick=()=>{ closeSheet(); miAuth.out(); };
   });
 }
 function openDeleteAccount(id){

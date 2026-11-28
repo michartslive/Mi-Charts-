@@ -8,6 +8,10 @@ export default {
       const r = await fetch(target, { cf: { cacheTtl: 20, cacheEverything: true } });
       return new Response(r.body, { status: r.status, headers: { "Content-Type": "application/json" } });
     }
+    if (u.pathname.startsWith("/yf/")) {
+      const r = await fetch("https://query1.finance.yahoo.com/" + u.pathname.slice(4) + u.search, { headers: { "User-Agent": "Mozilla/5.0" }, cf: { cacheTtl: 60, cacheEverything: true } });
+      return new Response(r.body, { status: r.status, headers: { "Content-Type": "application/json" } });
+    }
     return env.ASSETS.fetch(req);
   }
 };
